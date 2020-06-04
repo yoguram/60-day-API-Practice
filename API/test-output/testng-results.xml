@@ -1,0 +1,46 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<testng-results skipped="0" failed="0" ignored="0" total="3" passed="3">
+  <reporter-output>
+  </reporter-output>
+  <suite name="Default suite" duration-ms="20010" started-at="2020-06-04T20:57:47 IST" finished-at="2020-06-04T20:58:07 IST">
+    <groups>
+    </groups>
+    <test name="Default test" duration-ms="20010" started-at="2020-06-04T20:57:47 IST" finished-at="2020-06-04T20:58:07 IST">
+      <class name="paypal.CreateProduct">
+        <test-method status="PASS" signature="createProduct(java.lang.String)[pri:0, instance:paypal.CreateProduct@5bfbf16f]" name="createProduct" duration-ms="10579" started-at="2020-06-04T20:57:47 IST" data-provider="files" finished-at="2020-06-04T20:57:57 IST">
+          <params>
+            <param index="0">
+              <value>
+                <![CDATA[testData/1.json]]>
+              </value>
+            </param>
+          </params>
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- createProduct -->
+        <test-method status="PASS" signature="createProduct(java.lang.String)[pri:0, instance:paypal.CreateProduct@5bfbf16f]" name="createProduct" duration-ms="4563" started-at="2020-06-04T20:57:57 IST" data-provider="files" finished-at="2020-06-04T20:58:02 IST">
+          <params>
+            <param index="0">
+              <value>
+                <![CDATA[testData/2.json]]>
+              </value>
+            </param>
+          </params>
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- createProduct -->
+        <test-method status="PASS" signature="createProduct(java.lang.String)[pri:0, instance:paypal.CreateProduct@5bfbf16f]" name="createProduct" duration-ms="4770" started-at="2020-06-04T20:58:02 IST" data-provider="files" finished-at="2020-06-04T20:58:07 IST">
+          <params>
+            <param index="0">
+              <value>
+                <![CDATA[testData/3.json]]>
+              </value>
+            </param>
+          </params>
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- createProduct -->
+      </class> <!-- paypal.CreateProduct -->
+    </test> <!-- Default test -->
+  </suite> <!-- Default suite -->
+</testng-results>

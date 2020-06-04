@@ -1,0 +1,8 @@
+{
+  "name": "Advertisement",
+  "description": "Ad",
+  "type": "PHYSICAL",
+  "category": "ADVERTISING",
+  "image_url": "https://gtj.com/api.jpg",
+  "home_url": "https://gtj.com/home"
+}

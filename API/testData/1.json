@@ -1,0 +1,8 @@
+{
+  "name": "API",
+  "description": "API service",
+  "type": "SERVICE",
+  "category": "SOFTWARE",
+  "image_url": "https://gtj.com/api.jpg",
+  "home_url": "https://gtj.com/home"
+}
