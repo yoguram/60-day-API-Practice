@@ -25,10 +25,10 @@ public class CreateProduct {
 	public void createProduct(String filename)
 	{
 		File file = new File(filename);
-		RestAssured.baseURI="https://api.sandbox.paypal.com";
-		RestAssured.authentication = RestAssured.oauth2("A21AAFPHIThpe8EFNKhjp-f9s7G3uvw4KJCVBqA8zUC1WancUaQM4kuqz7ZIiO01EAeOo0_cpzhgb4NFlWh6MypyKtp_4jlOw");
-		Response response = RestAssured.given().contentType(ContentType.JSON).body(file).post("/v1/catalogs/products");
-		//response.prettyPrint();
+		RestAssured.baseURI="https://api.sandbox.paypal.com/v1/catalogs/products";
+		RestAssured.authentication = RestAssured.oauth2("A21AAFus_iYr8yTQZG3HpmYBJ2Hkkn0IxzqmLTOjI6vNmT7E3ujZ3AFFQG9moet7hMZCO2vMJtMNsSTDGdnQf91xny75hSvNw");
+		Response response = RestAssured.given().contentType(ContentType.JSON).body(file).post();
+		response.prettyPrint();
 		JsonPath jsonResponse = response.jsonPath();
 		String id = jsonResponse.getString("id");
 		System.out.println(id);

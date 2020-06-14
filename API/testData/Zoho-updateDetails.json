@@ -1,0 +1,13 @@
+{
+    "phone": 23467233,
+    "mobile": 938237475,
+    "shipping_address": {
+        "attention": "Ram changed",
+        "street": "Harrington Bay Street",
+        "city": "changed City",
+        "state": "CA",
+        "zip": 92612,
+        "country": "U.S.A",
+        "fax": 4527389
+    }
+}

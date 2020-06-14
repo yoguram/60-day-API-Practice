@@ -43,17 +43,9 @@ public class HighNewCases extends BaseRequest {
 
 			}
 		}
-		Set < Entry < String, Integer >> entries = map.entrySet();
-
-		Comparator < Entry < String, Integer >> valueComparator = new Comparator < Entry < String, Integer >> () 
-		{
-			public int compare(Entry < String, Integer > e1, Entry < String, Integer > e2) 
-			{
-				Integer v1 = e1.getValue();
-				Integer v2 = e2.getValue();
-				return v2.compareTo(v1);
-        	}
-		};
+		sortMap.putAll(map);
+		sortMap = new TreeMap<String, Integer>(Collections.reverseOrder());
+		System.out.println(sortMap);
 	}
 
 }
