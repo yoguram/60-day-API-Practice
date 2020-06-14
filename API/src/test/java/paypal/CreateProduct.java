@@ -36,6 +36,14 @@ public class CreateProduct {
 		JsonPath resp = getResponse.jsonPath();
 		resp.prettyPrint();
 		System.out.println(resp.getString("category"));
+		if(response.getContentType().contains("json"))
+		{
+			System.out.println("Response type is json");
+		}
+		if(response.getStatusCode()==201)
+		{
+			System.out.println("Response type is correct");
+		}
 	}
 		
 	}
