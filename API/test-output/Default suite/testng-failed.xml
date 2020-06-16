@@ -3,11 +3,12 @@
 <suite guice-stage="DEVELOPMENT" name="Failed suite [Default suite]">
   <test thread-count="5" name="Default test(failed)">
     <classes>
-      <class name="paypal.GetProduct">
+      <class name="hotels.RoomAvailability">
         <methods>
-          <include name="createProduct" invocation-numbers="0 1 2"/>
+          <include name="createSigature"/>
+          <include name="checkAvailability"/>
         </methods>
-      </class> <!-- paypal.GetProduct -->
+      </class> <!-- hotels.RoomAvailability -->
     </classes>
   </test> <!-- Default test(failed) -->
 </suite> <!-- Failed suite [Default suite] -->
