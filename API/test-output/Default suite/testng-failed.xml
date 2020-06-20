@@ -3,12 +3,12 @@
 <suite guice-stage="DEVELOPMENT" name="Failed suite [Default suite]">
   <test thread-count="5" name="Default test(failed)">
     <classes>
-      <class name="covid.LowDeathCases">
+      <class name="bestBuy.IPhonePrice">
         <methods>
+          <include name="getIphonePrice"/>
           <include name="baseRequest"/>
-          <include name="lowDeathCases"/>
         </methods>
-      </class> <!-- covid.LowDeathCases -->
+      </class> <!-- bestBuy.IPhonePrice -->
     </classes>
   </test> <!-- Default test(failed) -->
 </suite> <!-- Failed suite [Default suite] -->
