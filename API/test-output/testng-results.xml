@@ -1,27 +1,33 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<testng-results skipped="0" failed="0" ignored="1" total="3" passed="2">
+<testng-results skipped="0" failed="0" ignored="2" total="5" passed="3">
   <reporter-output>
   </reporter-output>
-  <suite name="Default suite" duration-ms="7103" started-at="2020-06-21T00:14:20 IST" finished-at="2020-06-21T00:14:27 IST">
+  <suite name="Default suite" duration-ms="6213" started-at="2020-06-26T00:51:49 IST" finished-at="2020-06-26T00:51:55 IST">
     <groups>
     </groups>
-    <test name="Default test" duration-ms="7103" started-at="2020-06-21T00:14:20 IST" finished-at="2020-06-21T00:14:27 IST">
-      <class name="ui_bank.GetLoanStatus">
-        <test-method status="PASS" signature="baseRequest()[pri:0, instance:ui_bank.GetLoanStatus@5bcea91b]" name="baseRequest" is-config="true" duration-ms="1082" started-at="2020-06-21T00:14:19 IST" finished-at="2020-06-21T00:14:20 IST">
+    <test name="Default test" duration-ms="6213" started-at="2020-06-26T00:51:49 IST" finished-at="2020-06-26T00:51:55 IST">
+      <class name="tomtom.GenerateAdminKey">
+        <test-method status="PASS" signature="basicRequest()[pri:0, instance:tomtom.GenerateAdminKey@42d8062c]" name="basicRequest" is-config="true" duration-ms="577" started-at="2020-06-26T00:51:49 IST" finished-at="2020-06-26T00:51:49 IST">
           <reporter-output>
           </reporter-output>
-        </test-method> <!-- baseRequest -->
-        <test-method status="PASS" signature="getLoanStatus()[pri:0, instance:ui_bank.GetLoanStatus@5bcea91b]" name="getLoanStatus" duration-ms="1217" started-at="2020-06-21T00:14:26 IST" depends-on-methods="ui_bank.TakeNewLoan.takeLoan" finished-at="2020-06-21T00:14:27 IST">
+        </test-method> <!-- basicRequest -->
+        <test-method status="PASS" signature="generateAdminKey()[pri:0, instance:tomtom.GenerateAdminKey@42d8062c]" name="generateAdminKey" duration-ms="3617" started-at="2020-06-26T00:51:49 IST" finished-at="2020-06-26T00:51:53 IST">
           <reporter-output>
           </reporter-output>
-        </test-method> <!-- getLoanStatus -->
-      </class> <!-- ui_bank.GetLoanStatus -->
-      <class name="ui_bank.TakeNewLoan">
-        <test-method status="PASS" signature="takeLoan()[pri:0, instance:ui_bank.TakeNewLoan@5f3a4b84]" name="takeLoan" duration-ms="5818" started-at="2020-06-21T00:14:20 IST" finished-at="2020-06-21T00:14:26 IST">
+        </test-method> <!-- generateAdminKey -->
+      </class> <!-- tomtom.GenerateAdminKey -->
+      <class name="tomtom.GetFenceList">
+        <test-method status="PASS" signature="getFenceList()[pri:0, instance:tomtom.GetFenceList@6043cd28]" name="getFenceList" duration-ms="1158" started-at="2020-06-26T00:51:54 IST" depends-on-methods="tomtom.CreateFence.createFence" finished-at="2020-06-26T00:51:55 IST">
           <reporter-output>
           </reporter-output>
-        </test-method> <!-- takeLoan -->
-      </class> <!-- ui_bank.TakeNewLoan -->
+        </test-method> <!-- getFenceList -->
+      </class> <!-- tomtom.GetFenceList -->
+      <class name="tomtom.CreateFence">
+        <test-method status="PASS" signature="createFence()[pri:0, instance:tomtom.CreateFence@cb51256]" name="createFence" duration-ms="1377" started-at="2020-06-26T00:51:53 IST" depends-on-methods="tomtom.GenerateAdminKey.generateAdminKey" finished-at="2020-06-26T00:51:54 IST">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- createFence -->
+      </class> <!-- tomtom.CreateFence -->
     </test> <!-- Default test -->
   </suite> <!-- Default suite -->
 </testng-results>

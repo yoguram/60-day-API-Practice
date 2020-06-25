@@ -1,0 +1,11 @@
+{
+  "name": "New Fence2",
+  "type": "Feature",
+  "projects": ["Testing","Testing22"],
+  "geometry": {
+    "radius": 100,
+    "type": "Point",
+    "shapeType": "Circle",
+    "coordinates": [-67.137343, 45.137451]
+  }
+  }

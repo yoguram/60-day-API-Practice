@@ -3,12 +3,24 @@
 <suite guice-stage="DEVELOPMENT" name="Failed suite [Default suite]">
   <test thread-count="5" name="Default test(failed)">
     <classes>
-      <class name="bestBuy.IPhonePrice">
+      <class name="tomtom.GetProjectList">
         <methods>
-          <include name="getIphonePrice"/>
-          <include name="baseRequest"/>
+          <include name="getProjectList"/>
+          <include name="basicRequest"/>
         </methods>
-      </class> <!-- bestBuy.IPhonePrice -->
+      </class> <!-- tomtom.GetProjectList -->
+      <class name="tomtom.GenerateAdminKey">
+        <methods>
+          <include name="generateAdminKey"/>
+          <include name="basicRequest"/>
+        </methods>
+      </class> <!-- tomtom.GenerateAdminKey -->
+      <class name="tomtom.CreateProject">
+        <methods>
+          <include name="createProject"/>
+          <include name="basicRequest"/>
+        </methods>
+      </class> <!-- tomtom.CreateProject -->
     </classes>
   </test> <!-- Default test(failed) -->
 </suite> <!-- Failed suite [Default suite] -->
