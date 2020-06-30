@@ -1,0 +1,1532 @@
+
+<!DOCTYPE html>
+<html>
+
+
+<head>
+	<meta charset='UTF-8' /> 
+	<meta name='description' content='' />
+	<meta name='robots' content='noodp, noydir' />
+	<meta name='viewport' content='width=device-width, initial-scale=1' />
+	<meta id="timeStampFormat" name="timeStampFormat" content='MMM d, yyyy hh:mm:ss a'/>
+	
+	<link href='https://fonts.googleapis.com/css?family=Source+Sans+Pro:400,600' rel='stylesheet' type='text/css'>
+	<link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
+
+		<link href='https://cdn.rawgit.com/anshooarora/extentreports-java/b4a58fcfd1e137bd9287244035a7c80d3d73b3af/dist/css/extent.css' type='text/css' rel='stylesheet' />
+	
+	<title>Makaia Framework - REST, Selenium Project</title>
+
+	<style type='text/css'>
+			
+      
+        
+      
+    
+	</style>
+</head>
+
+	<body class='extent standard default hide-overflow '>
+		<div id='theme-selector' alt='Click to toggle theme. To enable by default, use theme configuration.' title='Click to toggle theme. To enable by default, use theme configuration.'>
+			<span><i class='material-icons'>desktop_windows</i></span>
+		</div>
+
+<nav>
+	<div class="nav-wrapper">
+		<a href="#!" class="brand-logo blue darken-3">Extent</a>
+
+		<!-- slideout menu -->
+		<ul id='slide-out' class='side-nav fixed hide-on-med-and-down'>
+			<li class='waves-effect active'><a href='#!' view='test-view' onclick="configureView(0);chartsView('test');"><i class='material-icons'>dashboard</i></a></li>
+						<li class='waves-effect'><a href='#!' view='category-view' onclick="configureView(1)"><i class='material-icons'>label_outline</i></a></li>
+				<li class='waves-effect'><a href='#!' view='author-view' onclick="configureView(3)"><i class='material-icons'>person</i></a></li>
+			<li class='waves-effect'><a href='#!' onclick="configureView(-1);chartsView('dashboard');" view='dashboard-view'><i class='material-icons'>track_changes</i></i></a></li>
+		</ul>
+
+		<!-- report name -->
+		<span class='report-name'>Makaia Framework</span>
+		
+		<!-- report headline -->
+		<span class='report-headline'></span>
+
+		<!-- nav-right -->
+		<ul id='nav-mobile' class='right hide-on-med-and-down nav-right'>
+			<li>
+                <a href='#!'>
+                    <span class='label suite-start-time blue darken-3'>Jun 30, 2020 03:33:47 PM</span>
+				</a>
+			</li>
+			<li>
+                <a href='#!'>
+                    <span class='label blue darken-3'>3.1.3</span>
+				</a>
+			</li>
+		</ul>
+	</div>
+</nav>
+
+		<!-- container -->
+		<div class='container'>
+
+<div id='test-view' class='view'>
+				
+	<section id='controls'>
+		<div class='controls grey lighten-4'>
+			<!-- test toggle -->
+			<div class='chip transparent'>
+				<a class='dropdown-button tests-toggle' data-activates='tests-toggle' data-constrainwidth='true' data-beloworigin='true' data-hover='true' href='#'>
+					<i class='material-icons'>warning</i> Status
+				</a>
+				<ul id='tests-toggle' class='dropdown-content'>
+											<li status='pass'><a href='#!'>Pass <i class='material-icons green-text'>check_circle</i></a></li>
+					<li class='divider'></li>
+					<li status='clear' clear='true'><a href='#!'>Clear Filters <i class='material-icons'>clear</i></a></li>
+				</ul>
+			</div>
+			<!-- test toggle -->
+
+			<!-- category toggle -->
+			<div class='chip transparent'>
+				<a class='dropdown-button category-toggle' data-activates='category-toggle' data-constrainwidth='false' data-beloworigin='true' data-hover='true' href='#'>
+					<i class='material-icons'>local_offer</i> Category
+				</a>
+				<ul id='category-toggle' class='dropdown-content'>
+					<li><a href='#'>API</a></li>
+					<li class='divider'></li>
+					<li class='clear'><a href='#!' clear='true'>Clear Filters</a></li>
+				</ul>
+			</div>
+			<!-- category toggle -->
+
+			<!-- clear filters -->
+			<div class='chip transparent hide'>
+				<a class='' id='clear-filters' alt='Clear Filters' title='Clear Filters'>
+					<i class='material-icons'>close</i> Clear
+				</a>
+			</div>
+			<!-- clear filters -->
+
+			<!-- enable dashboard -->
+			<div id='toggle-test-view-charts' class='chip transparent'>
+				<a class='pink-text' id='enable-dashboard' alt='Enable Dashboard' title='Enable Dashboard'>
+					<i class='material-icons'>track_changes</i> Dashboard
+				</a>
+			</div>
+			<!-- enable dashboard -->
+
+			<!-- search -->
+			<div class='chip transparent' alt='Search Tests' title='Search Tests'>
+				<a href="#" class='search-div'>
+					<i class='material-icons'>search</i> Search
+				</a>
+
+				<div class='input-field left hide'>
+					<input id='search-tests' type='text' class='validate browser-default' placeholder='Search Tests...'>
+				</div>
+				
+			</div>
+			<!-- search -->
+		</div>
+	</section>
+
+
+<div id='test-view-charts' class='subview-full'>
+	<div id='charts-row' class='row nm-v nm-h'>
+		<div class='col s12 m6 l6 np-h'>
+			<div class='card-panel nm-v'>
+				<div class='left panel-name'>Tests</div>
+				<div class='chart-box'>
+					<canvas id='parent-analysis' width='100' height='80'></canvas>
+				</div>
+				<div class='block text-small'>
+					<span class='tooltipped' data-position='top' data-tooltip='100%'><span class='strong'>27</span> test(s) passed</span>
+				</div>
+				<div class='block text-small'>
+					<span class='strong tooltipped' data-position='top' data-tooltip='0%'>0</span> test(s) failed, <span class='strong tooltipped' data-position='top' data-tooltip='0%'>0</span> others
+				</div>
+			</div>
+		</div>
+		
+		<div class='col s12 m6 l6 np-h'>
+			<div class='card-panel nm-v'>
+				<div class='left panel-name'>Steps</div>
+				<div class='chart-box'>
+					<canvas id='child-analysis' width='100' height='80'></canvas>
+				</div>
+				<div class='block text-small'>
+					<span class='tooltipped' data-position='top' data-tooltip='100%'><span class='strong'>34</span> step(s) passed</span>
+				</div>
+				<div class='block text-small'>
+					<span class='strong tooltipped' data-position='top' data-tooltip='0%'>0</span> step(s) failed, <span class='strong tooltipped' data-position='top' data-tooltip='0%'>0</span> others
+				</div>
+			</div>
+		</div>
+		
+	</div>
+</div>
+
+	<div class='subview-left left'>
+		
+		<div class='view-summary'>
+			<h5>Tests</h5>
+			<ul id='test-collection' class='test-collection'>
+				
+				
+				<li class='test displayed active has-leaf pass' status='pass' bdd='false' test-id='1'>
+					<div class='test-heading'>
+						<span class='test-name'>Create a new Incident (REST)</span>
+						<span class='test-time'>Apr 26, 2020 12:35:44 PM</span>
+						<span class='test-status right pass'>pass</span>
+					</div>
+					<div class='test-content hide'>
+<div class='test-time-info'>
+	<span class='label start-time'>Apr 26, 2020 12:35:44 PM</span>
+	<span class='label end-time'>Apr 26, 2020 12:35:57 PM</span>
+	<span class='label time-taken grey lighten-1 white-text'>0h 0m 13s+0ms</span>
+</div>
+	<div class='test-desc'>Create a new Incident and Verify </div>
+	<ul class='collapsible node-list' data-collapsible='accordion'>
+		
+				<li class='node level-1 leaf pass' status='pass' test-id='2'>
+					<div class='collapsible-header'>
+						<h5 class='node-name'>Incident</h5>
+						<span class="node-time label grey lighten-1 white-text">Jun 30, 2020 03:33:48 PM</span>
+						<span class='node-duration label grey lighten-1 white-text'>0h 1m 20s+22ms</span>
+						<span class='test-status right pass'>pass</span>
+					</div>
+						<div class='collapsible-body'>
+								<div class='node-steps'>
+									<table class='bordered table-results'>
+										<thead>
+											<tr>
+												<th>Status</th>
+												<th>Timestamp</th>
+												<th>Details</th>
+											</tr>
+										</thead>
+										<tbody>
+												<tr class='log' status='pass'>
+													<td class='status pass' title='pass' alt='pass'><i class='material-icons'>check_circle</i></td>
+													<td class='timestamp'>12:35:57 PM</td>
+													<td class='step-details'>The JSON response has value This is Rest Assured Automation framework - Makaia as expected.</td>
+												</tr>
+												<tr class='log' status='pass'>
+													<td class='status pass' title='pass' alt='pass'><i class='material-icons'>check_circle</i></td>
+													<td class='timestamp'>12:35:57 PM</td>
+													<td class='step-details'>The Content type JSON matches the expected content type</td>
+												</tr>
+												<tr class='log' status='pass'>
+													<td class='status pass' title='pass' alt='pass'><i class='material-icons'>check_circle</i></td>
+													<td class='timestamp'>12:35:57 PM</td>
+													<td class='step-details'>The status code 201 matches the expected code</td>
+												</tr>
+												<tr class='log' status='pass'>
+													<td class='status pass' title='pass' alt='pass'><i class='material-icons'>check_circle</i></td>
+													<td class='timestamp'>12:35:57 PM</td>
+													<td class='step-details'>The time taken 9096 with in the expected time</td>
+												</tr>
+										</tbody>
+									</table>
+								</div>
+						</div>
+				</li>
+	</ul>
+					</div>
+				</li>
+				
+				
+				<li class='test displayed active has-leaf pass' status='pass' bdd='false' test-id='3'>
+					<div class='test-heading'>
+						<span class='test-name'>Create a new Incident (REST)</span>
+						<span class='test-time'>Apr 26, 2020 12:36:17 PM</span>
+						<span class='test-status right pass'>pass</span>
+					</div>
+					<div class='test-content hide'>
+<div class='test-time-info'>
+	<span class='label start-time'>Apr 26, 2020 12:36:17 PM</span>
+	<span class='label end-time'>Apr 26, 2020 12:36:30 PM</span>
+	<span class='label time-taken grey lighten-1 white-text'>0h 0m 13s+0ms</span>
+</div>
+	<div class='test-desc'>Create a new Incident and Verify </div>
+	<ul class='collapsible node-list' data-collapsible='accordion'>
+		
+				<li class='node level-1 leaf pass' status='pass' test-id='4'>
+					<div class='collapsible-header'>
+						<h5 class='node-name'>Incident</h5>
+						<span class="node-time label grey lighten-1 white-text">Jun 30, 2020 03:33:48 PM</span>
+						<span class='node-duration label grey lighten-1 white-text'>0h 1m 20s+69ms</span>
+						<span class='test-status right pass'>pass</span>
+					</div>
+						<div class='collapsible-body'>
+								<div class='node-steps'>
+									<table class='bordered table-results'>
+										<thead>
+											<tr>
+												<th>Status</th>
+												<th>Timestamp</th>
+												<th>Details</th>
+											</tr>
+										</thead>
+										<tbody>
+												<tr class='log' status='pass'>
+													<td class='status pass' title='pass' alt='pass'><i class='material-icons'>check_circle</i></td>
+													<td class='timestamp'>12:36:30 PM</td>
+													<td class='step-details'>The JSON response has value This is Rest Assured Automation framework - Makaia as expected.</td>
+												</tr>
+												<tr class='log' status='pass'>
+													<td class='status pass' title='pass' alt='pass'><i class='material-icons'>check_circle</i></td>
+													<td class='timestamp'>12:36:30 PM</td>
+													<td class='step-details'>The Content type JSON matches the expected content type</td>
+												</tr>
+												<tr class='log' status='pass'>
+													<td class='status pass' title='pass' alt='pass'><i class='material-icons'>check_circle</i></td>
+													<td class='timestamp'>12:36:30 PM</td>
+													<td class='step-details'>The status code 201 matches the expected code</td>
+												</tr>
+												<tr class='log' status='pass'>
+													<td class='status pass' title='pass' alt='pass'><i class='material-icons'>check_circle</i></td>
+													<td class='timestamp'>12:36:30 PM</td>
+													<td class='step-details'>The time taken 8971 with in the expected time</td>
+												</tr>
+										</tbody>
+									</table>
+								</div>
+						</div>
+				</li>
+	</ul>
+					</div>
+				</li>
+				
+				
+				<li class='test displayed active has-leaf pass' status='pass' bdd='false' test-id='5'>
+					<div class='test-heading'>
+						<span class='test-name'>Delete the first incident (REST)</span>
+						<span class='test-time'>Apr 26, 2020 12:36:31 PM</span>
+						<span class='test-status right pass'>pass</span>
+					</div>
+					<div class='test-content hide'>
+<div class='test-time-info'>
+	<span class='label start-time'>Apr 26, 2020 12:36:31 PM</span>
+	<span class='label end-time'>Apr 26, 2020 12:36:43 PM</span>
+	<span class='label time-taken grey lighten-1 white-text'>0h 0m 12s+0ms</span>
+</div>
+	<div class='test-desc'>Get all incidents from the search and delete the first incident </div>
+	<ul class='collapsible node-list' data-collapsible='accordion'>
+		
+				<li class='node level-1 leaf pass' status='pass' test-id='6'>
+					<div class='collapsible-header'>
+						<h5 class='node-name'>Incident</h5>
+						<span class="node-time label grey lighten-1 white-text">Jun 30, 2020 03:33:48 PM</span>
+						<span class='node-duration label grey lighten-1 white-text'>0h 1m 20s+87ms</span>
+						<span class='test-status right pass'>pass</span>
+					</div>
+						<div class='collapsible-body'>
+								<div class='node-steps'>
+									<table class='bordered table-results'>
+										<thead>
+											<tr>
+												<th>Status</th>
+												<th>Timestamp</th>
+												<th>Details</th>
+											</tr>
+										</thead>
+										<tbody>
+												<tr class='log' status='pass'>
+													<td class='status pass' title='pass' alt='pass'><i class='material-icons'>check_circle</i></td>
+													<td class='timestamp'>12:36:37 PM</td>
+													<td class='step-details'>The Content type JSON matches the expected content type</td>
+												</tr>
+												<tr class='log' status='pass'>
+													<td class='status pass' title='pass' alt='pass'><i class='material-icons'>check_circle</i></td>
+													<td class='timestamp'>12:36:37 PM</td>
+													<td class='step-details'>The status code 200 matches the expected code</td>
+												</tr>
+												<tr class='log' status='pass'>
+													<td class='status pass' title='pass' alt='pass'><i class='material-icons'>check_circle</i></td>
+													<td class='timestamp'>12:36:37 PM</td>
+													<td class='step-details'>The time taken 6496 with in the expected time</td>
+												</tr>
+												<tr class='log' status='pass'>
+													<td class='status pass' title='pass' alt='pass'><i class='material-icons'>check_circle</i></td>
+													<td class='timestamp'>12:36:43 PM</td>
+													<td class='step-details'>The status code 204 matches the expected code</td>
+												</tr>
+										</tbody>
+									</table>
+								</div>
+						</div>
+				</li>
+	</ul>
+					</div>
+				</li>
+				
+				
+				<li class='test displayed active has-leaf pass' status='pass' bdd='false' test-id='7'>
+					<div class='test-heading'>
+						<span class='test-name'>Delete the incident randomly (REST)</span>
+						<span class='test-time'>Apr 26, 2020 12:36:43 PM</span>
+						<span class='test-status right pass'>pass</span>
+					</div>
+					<div class='test-content hide'>
+<div class='test-time-info'>
+	<span class='label start-time'>Apr 26, 2020 12:36:43 PM</span>
+	<span class='label end-time'>Apr 26, 2020 12:36:57 PM</span>
+	<span class='label time-taken grey lighten-1 white-text'>0h 0m 14s+0ms</span>
+</div>
+	<div class='test-desc'>Get all incidents from the search and delete the first incident </div>
+	<ul class='collapsible node-list' data-collapsible='accordion'>
+		
+				<li class='node level-1 leaf pass' status='pass' test-id='8'>
+					<div class='collapsible-header'>
+						<h5 class='node-name'>Incident</h5>
+						<span class="node-time label grey lighten-1 white-text">Jun 30, 2020 03:33:48 PM</span>
+						<span class='node-duration label grey lighten-1 white-text'>0h 1m 20s+112ms</span>
+						<span class='test-status right pass'>pass</span>
+					</div>
+						<div class='collapsible-body'>
+								<div class='node-steps'>
+									<table class='bordered table-results'>
+										<thead>
+											<tr>
+												<th>Status</th>
+												<th>Timestamp</th>
+												<th>Details</th>
+											</tr>
+										</thead>
+										<tbody>
+												<tr class='log' status='pass'>
+													<td class='status pass' title='pass' alt='pass'><i class='material-icons'>check_circle</i></td>
+													<td class='timestamp'>12:36:57 PM</td>
+													<td class='step-details'>The status code 204 matches the expected code</td>
+												</tr>
+										</tbody>
+									</table>
+								</div>
+						</div>
+				</li>
+	</ul>
+					</div>
+				</li>
+				
+				
+				<li class='test displayed active has-leaf pass' status='pass' bdd='false' test-id='9'>
+					<div class='test-heading'>
+						<span class='test-name'>Search Incident (Using Selenium) After Creating Incident (Using REST Assured)</span>
+						<span class='test-time'>Apr 26, 2020 12:37:59 PM</span>
+						<span class='test-status right pass'>pass</span>
+					</div>
+					<div class='test-content hide'>
+<div class='test-time-info'>
+	<span class='label start-time'>Apr 26, 2020 12:37:59 PM</span>
+	<span class='label end-time'>Apr 26, 2020 12:40:01 PM</span>
+	<span class='label time-taken grey lighten-1 white-text'>0h 2m 2s+0ms</span>
+</div>
+	<div class='test-desc'>Create Incident (Using REST Assured) and Search with Selenium </div>
+	<ul class='collapsible node-list' data-collapsible='accordion'>
+		
+				<li class='node level-1 leaf pass' status='pass' test-id='10'>
+					<div class='collapsible-header'>
+						<h5 class='node-name'>Incident Management</h5>
+						<span class="node-time label grey lighten-1 white-text">Jun 30, 2020 03:33:48 PM</span>
+						<span class='node-duration label grey lighten-1 white-text'>0h 1m 20s+138ms</span>
+						<span class='test-status right pass'>pass</span>
+					</div>
+						<div class='collapsible-body'>
+								<div class='node-steps'>
+									<table class='bordered table-results'>
+										<thead>
+											<tr>
+												<th>Status</th>
+												<th>Timestamp</th>
+												<th>Details</th>
+											</tr>
+										</thead>
+										<tbody>
+												<tr class='log' status='pass'>
+													<td class='status pass' title='pass' alt='pass'><i class='material-icons'>check_circle</i></td>
+													<td class='timestamp'>12:39:06 PM</td>
+													<td class='step-details'>The status code 201 matches the expected code</td>
+												</tr>
+												<tr class='log' status='pass'>
+													<td class='status pass' title='pass' alt='pass'><i class='material-icons'>check_circle</i></td>
+													<td class='timestamp'>12:39:22 PM</td>
+													<td class='step-details'>The data: admin entered successfully in the field :[[ChromeDriver: chrome on WINDOWS (28ca659935e50f8c28ed881a242d2299)] -&gt; id: user_name]<img data-featherlight="./../reports/images/669424323.png" width="10%" src="./../reports/images/669424323.png" data-src="./../reports/images/669424323.png"></td>
+												</tr>
+												<tr class='log' status='pass'>
+													<td class='status pass' title='pass' alt='pass'><i class='material-icons'>check_circle</i></td>
+													<td class='timestamp'>12:39:24 PM</td>
+													<td class='step-details'>The data: Tuna@123 entered successfully in the field :[[ChromeDriver: chrome on WINDOWS (28ca659935e50f8c28ed881a242d2299)] -&gt; id: user_password]<img data-featherlight="./../reports/images/885208399.png" width="10%" src="./../reports/images/885208399.png" data-src="./../reports/images/885208399.png"></td>
+												</tr>
+												<tr class='log' status='pass'>
+													<td class='status pass' title='pass' alt='pass'><i class='material-icons'>check_circle</i></td>
+													<td class='timestamp'>12:39:36 PM</td>
+													<td class='step-details'>The element Login is clicked<img data-featherlight="./../reports/images/718205940.png" width="10%" src="./../reports/images/718205940.png" data-src="./../reports/images/718205940.png"></td>
+												</tr>
+												<tr class='log' status='pass'>
+													<td class='status pass' title='pass' alt='pass'><i class='material-icons'>check_circle</i></td>
+													<td class='timestamp'>12:39:43 PM</td>
+													<td class='step-details'>The data: incident entered successfully in the field :[[ChromeDriver: chrome on WINDOWS (28ca659935e50f8c28ed881a242d2299)] -&gt; id: filter]<img data-featherlight="./../reports/images/382471120.png" width="10%" src="./../reports/images/382471120.png" data-src="./../reports/images/382471120.png"></td>
+												</tr>
+												<tr class='log' status='pass'>
+													<td class='status pass' title='pass' alt='pass'><i class='material-icons'>check_circle</i></td>
+													<td class='timestamp'>12:39:46 PM</td>
+													<td class='step-details'>The element Open is clicked<img data-featherlight="./../reports/images/658070641.png" width="10%" src="./../reports/images/658070641.png" data-src="./../reports/images/658070641.png"></td>
+												</tr>
+												<tr class='log' status='pass'>
+													<td class='status pass' title='pass' alt='pass'><i class='material-icons'>check_circle</i></td>
+													<td class='timestamp'>12:39:58 PM</td>
+													<td class='step-details'>The data: INC0010551 entered successfully in the field :[[ChromeDriver: chrome on WINDOWS (28ca659935e50f8c28ed881a242d2299)] -&gt; xpath: (//input[@class='form-control'])[1]]<img data-featherlight="./../reports/images/705561678.png" width="10%" src="./../reports/images/705561678.png" data-src="./../reports/images/705561678.png"></td>
+												</tr>
+												<tr class='log' status='pass'>
+													<td class='status pass' title='pass' alt='pass'><i class='material-icons'>check_circle</i></td>
+													<td class='timestamp'>12:40:01 PM</td>
+													<td class='step-details'>The browser is closed</td>
+												</tr>
+										</tbody>
+									</table>
+								</div>
+						</div>
+				</li>
+	</ul>
+					</div>
+				</li>
+				
+				
+				<li class='test displayed active has-leaf pass' status='pass' bdd='false' test-id='11'>
+					<div class='test-heading'>
+						<span class='test-name'>Search Incident (Using Selenium) After Creating Incident (Using REST Assured)</span>
+						<span class='test-time'>Apr 26, 2020 12:50:26 PM</span>
+						<span class='test-status right pass'>pass</span>
+					</div>
+					<div class='test-content hide'>
+<div class='test-time-info'>
+	<span class='label start-time'>Apr 26, 2020 12:50:26 PM</span>
+	<span class='label end-time'>Apr 26, 2020 12:51:45 PM</span>
+	<span class='label time-taken grey lighten-1 white-text'>0h 1m 19s+0ms</span>
+</div>
+	<div class='test-desc'>Create Incident (Using REST Assured) and Search with Selenium </div>
+	<ul class='collapsible node-list' data-collapsible='accordion'>
+		
+				<li class='node level-1 leaf pass' status='pass' test-id='12'>
+					<div class='collapsible-header'>
+						<h5 class='node-name'>Incident Management</h5>
+						<span class="node-time label grey lighten-1 white-text">Jun 30, 2020 03:33:48 PM</span>
+						<span class='node-duration label grey lighten-1 white-text'>0h 1m 20s+155ms</span>
+						<span class='test-status right pass'>pass</span>
+					</div>
+						<div class='collapsible-body'>
+								<div class='node-steps'>
+									<table class='bordered table-results'>
+										<thead>
+											<tr>
+												<th>Status</th>
+												<th>Timestamp</th>
+												<th>Details</th>
+											</tr>
+										</thead>
+										<tbody>
+												<tr class='log' status='pass'>
+													<td class='status pass' title='pass' alt='pass'><i class='material-icons'>check_circle</i></td>
+													<td class='timestamp'>12:51:07 PM</td>
+													<td class='step-details'>The status code 201 matches the expected code</td>
+												</tr>
+												<tr class='log' status='pass'>
+													<td class='status pass' title='pass' alt='pass'><i class='material-icons'>check_circle</i></td>
+													<td class='timestamp'>12:51:14 PM</td>
+													<td class='step-details'>The data: admin entered successfully in the field :[[ChromeDriver: chrome on WINDOWS (13f59c6228fe5c23cb6a86a47b4a5683)] -&gt; id: user_name]<img data-featherlight="./../reports/images/687820141.png" width="10%" src="./../reports/images/687820141.png" data-src="./../reports/images/687820141.png"></td>
+												</tr>
+												<tr class='log' status='pass'>
+													<td class='status pass' title='pass' alt='pass'><i class='material-icons'>check_circle</i></td>
+													<td class='timestamp'>12:51:16 PM</td>
+													<td class='step-details'>The data: Tuna@123 entered successfully in the field :[[ChromeDriver: chrome on WINDOWS (13f59c6228fe5c23cb6a86a47b4a5683)] -&gt; id: user_password]<img data-featherlight="./../reports/images/128269977.png" width="10%" src="./../reports/images/128269977.png" data-src="./../reports/images/128269977.png"></td>
+												</tr>
+												<tr class='log' status='pass'>
+													<td class='status pass' title='pass' alt='pass'><i class='material-icons'>check_circle</i></td>
+													<td class='timestamp'>12:51:23 PM</td>
+													<td class='step-details'>The element Login is clicked<img data-featherlight="./../reports/images/58910301.png" width="10%" src="./../reports/images/58910301.png" data-src="./../reports/images/58910301.png"></td>
+												</tr>
+												<tr class='log' status='pass'>
+													<td class='status pass' title='pass' alt='pass'><i class='material-icons'>check_circle</i></td>
+													<td class='timestamp'>12:51:31 PM</td>
+													<td class='step-details'>The data: incident entered successfully in the field :[[ChromeDriver: chrome on WINDOWS (13f59c6228fe5c23cb6a86a47b4a5683)] -&gt; id: filter]<img data-featherlight="./../reports/images/711172411.png" width="10%" src="./../reports/images/711172411.png" data-src="./../reports/images/711172411.png"></td>
+												</tr>
+												<tr class='log' status='pass'>
+													<td class='status pass' title='pass' alt='pass'><i class='material-icons'>check_circle</i></td>
+													<td class='timestamp'>12:51:33 PM</td>
+													<td class='step-details'>The element Open is clicked<img data-featherlight="./../reports/images/195149643.png" width="10%" src="./../reports/images/195149643.png" data-src="./../reports/images/195149643.png"></td>
+												</tr>
+												<tr class='log' status='pass'>
+													<td class='status pass' title='pass' alt='pass'><i class='material-icons'>check_circle</i></td>
+													<td class='timestamp'>12:51:44 PM</td>
+													<td class='step-details'>The data: INC0010579 entered successfully in the field :[[ChromeDriver: chrome on WINDOWS (13f59c6228fe5c23cb6a86a47b4a5683)] -&gt; xpath: (//input[@class='form-control'])[1]]<img data-featherlight="./../reports/images/83465449.png" width="10%" src="./../reports/images/83465449.png" data-src="./../reports/images/83465449.png"></td>
+												</tr>
+												<tr class='log' status='pass'>
+													<td class='status pass' title='pass' alt='pass'><i class='material-icons'>check_circle</i></td>
+													<td class='timestamp'>12:51:45 PM</td>
+													<td class='step-details'>The browser is closed</td>
+												</tr>
+										</tbody>
+									</table>
+								</div>
+						</div>
+				</li>
+	</ul>
+					</div>
+				</li>
+				
+				
+				<li class='test displayed active has-leaf pass' status='pass' bdd='false' test-id='13'>
+					<div class='test-heading'>
+						<span class='test-name'>Scenario 1</span>
+						<span class='test-time'>Jun 30, 2020 12:12:03 AM</span>
+						<span class='test-status right pass'>pass</span>
+					</div>
+					<div class='test-content hide'>
+<div class='test-time-info'>
+	<span class='label start-time'>Jun 30, 2020 12:12:03 AM</span>
+	<span class='label end-time'>Jun 30, 2020 12:12:03 AM</span>
+	<span class='label time-taken grey lighten-1 white-text'>0h 0m 0s+0ms</span>
+</div>
+	<div class='test-desc'>Creat New List,Create new Segment,Get All list and Verify the lis i present,Delete the created new list </div>
+	<ul class='collapsible node-list' data-collapsible='accordion'>
+		
+				<li class='node level-1 leaf pass' status='pass' test-id='14'>
+					<div class='collapsible-header'>
+						<h5 class='node-name'>newsLetter - Scenario1</h5>
+						<span class="node-time label grey lighten-1 white-text">Jun 30, 2020 03:33:48 PM</span>
+						<span class='node-duration label grey lighten-1 white-text'>0h 1m 20s+204ms</span>
+						<span class='test-status right pass'>pass</span>
+					</div>
+				</li>
+	</ul>
+					</div>
+				</li>
+				
+				
+				<li class='test displayed active has-leaf pass' status='pass' bdd='false' test-id='15'>
+					<div class='test-heading'>
+						<span class='test-name'>Scenario 1</span>
+						<span class='test-time'>Jun 30, 2020 12:12:58 AM</span>
+						<span class='test-status right pass'>pass</span>
+					</div>
+					<div class='test-content hide'>
+<div class='test-time-info'>
+	<span class='label start-time'>Jun 30, 2020 12:12:58 AM</span>
+	<span class='label end-time'>Jun 30, 2020 12:12:58 AM</span>
+	<span class='label time-taken grey lighten-1 white-text'>0h 0m 0s+0ms</span>
+</div>
+	<div class='test-desc'>Creat New List,Create new Segment,Get All list and Verify the lis i present,Delete the created new list </div>
+	<ul class='collapsible node-list' data-collapsible='accordion'>
+		
+				<li class='node level-1 leaf pass' status='pass' test-id='16'>
+					<div class='collapsible-header'>
+						<h5 class='node-name'>newsLetter - Scenario1</h5>
+						<span class="node-time label grey lighten-1 white-text">Jun 30, 2020 03:33:48 PM</span>
+						<span class='node-duration label grey lighten-1 white-text'>0h 1m 20s+236ms</span>
+						<span class='test-status right pass'>pass</span>
+					</div>
+				</li>
+	</ul>
+					</div>
+				</li>
+				
+				
+				<li class='test displayed active has-leaf pass' status='pass' bdd='false' test-id='17'>
+					<div class='test-heading'>
+						<span class='test-name'>Scenario 1</span>
+						<span class='test-time'>Jun 30, 2020 12:17:51 AM</span>
+						<span class='test-status right pass'>pass</span>
+					</div>
+					<div class='test-content hide'>
+<div class='test-time-info'>
+	<span class='label start-time'>Jun 30, 2020 12:17:51 AM</span>
+	<span class='label end-time'>Jun 30, 2020 12:17:52 AM</span>
+	<span class='label time-taken grey lighten-1 white-text'>0h 0m 1s+0ms</span>
+</div>
+	<div class='test-desc'>Creat New List,Create new Segment,Get All list and Verify the lis i present,Delete the created new list </div>
+	<ul class='collapsible node-list' data-collapsible='accordion'>
+		
+				<li class='node level-1 leaf pass' status='pass' test-id='18'>
+					<div class='collapsible-header'>
+						<h5 class='node-name'>newsLetter - Scenario1</h5>
+						<span class="node-time label grey lighten-1 white-text">Jun 30, 2020 03:33:48 PM</span>
+						<span class='node-duration label grey lighten-1 white-text'>0h 1m 20s+244ms</span>
+						<span class='test-status right pass'>pass</span>
+					</div>
+				</li>
+	</ul>
+					</div>
+				</li>
+				
+				
+				<li class='test displayed active has-leaf pass' status='pass' bdd='false' test-id='19'>
+					<div class='test-heading'>
+						<span class='test-name'>Scenario 1</span>
+						<span class='test-time'>Jun 30, 2020 12:22:08 AM</span>
+						<span class='test-status right pass'>pass</span>
+					</div>
+					<div class='test-content hide'>
+<div class='test-time-info'>
+	<span class='label start-time'>Jun 30, 2020 12:22:08 AM</span>
+	<span class='label end-time'>Jun 30, 2020 12:22:08 AM</span>
+	<span class='label time-taken grey lighten-1 white-text'>0h 0m 0s+0ms</span>
+</div>
+	<div class='test-desc'>Creat New List,Create new Segment,Get All list and Verify the lis i present,Delete the created new list </div>
+	<ul class='collapsible node-list' data-collapsible='accordion'>
+		
+				<li class='node level-1 leaf pass' status='pass' test-id='20'>
+					<div class='collapsible-header'>
+						<h5 class='node-name'>newsLetter - Scenario1</h5>
+						<span class="node-time label grey lighten-1 white-text">Jun 30, 2020 03:33:48 PM</span>
+						<span class='node-duration label grey lighten-1 white-text'>0h 1m 20s+251ms</span>
+						<span class='test-status right pass'>pass</span>
+					</div>
+				</li>
+	</ul>
+					</div>
+				</li>
+				
+				
+				<li class='test displayed active has-leaf pass' status='pass' bdd='false' test-id='21'>
+					<div class='test-heading'>
+						<span class='test-name'>Scenario 1</span>
+						<span class='test-time'>Jun 30, 2020 12:22:49 AM</span>
+						<span class='test-status right pass'>pass</span>
+					</div>
+					<div class='test-content hide'>
+<div class='test-time-info'>
+	<span class='label start-time'>Jun 30, 2020 12:22:49 AM</span>
+	<span class='label end-time'>Jun 30, 2020 12:22:49 AM</span>
+	<span class='label time-taken grey lighten-1 white-text'>0h 0m 0s+0ms</span>
+</div>
+	<div class='test-desc'>Creat New List,Create new Segment,Get All list and Verify the lis i present,Delete the created new list </div>
+	<ul class='collapsible node-list' data-collapsible='accordion'>
+		
+				<li class='node level-1 leaf pass' status='pass' test-id='22'>
+					<div class='collapsible-header'>
+						<h5 class='node-name'>newsLetter - Scenario1</h5>
+						<span class="node-time label grey lighten-1 white-text">Jun 30, 2020 03:33:48 PM</span>
+						<span class='node-duration label grey lighten-1 white-text'>0h 1m 20s+273ms</span>
+						<span class='test-status right pass'>pass</span>
+					</div>
+				</li>
+	</ul>
+					</div>
+				</li>
+				
+				
+				<li class='test displayed active has-leaf pass' status='pass' bdd='false' test-id='23'>
+					<div class='test-heading'>
+						<span class='test-name'>Scenario 1</span>
+						<span class='test-time'>Jun 30, 2020 12:23:26 AM</span>
+						<span class='test-status right pass'>pass</span>
+					</div>
+					<div class='test-content hide'>
+<div class='test-time-info'>
+	<span class='label start-time'>Jun 30, 2020 12:23:26 AM</span>
+	<span class='label end-time'>Jun 30, 2020 12:23:26 AM</span>
+	<span class='label time-taken grey lighten-1 white-text'>0h 0m 0s+0ms</span>
+</div>
+	<div class='test-desc'>Creat New List,Create new Segment,Get All list and Verify the lis i present,Delete the created new list </div>
+	<ul class='collapsible node-list' data-collapsible='accordion'>
+		
+				<li class='node level-1 leaf pass' status='pass' test-id='24'>
+					<div class='collapsible-header'>
+						<h5 class='node-name'>newsLetter - Scenario1</h5>
+						<span class="node-time label grey lighten-1 white-text">Jun 30, 2020 03:33:48 PM</span>
+						<span class='node-duration label grey lighten-1 white-text'>0h 1m 20s+302ms</span>
+						<span class='test-status right pass'>pass</span>
+					</div>
+				</li>
+	</ul>
+					</div>
+				</li>
+				
+				
+				<li class='test displayed active has-leaf pass' status='pass' bdd='false' test-id='25'>
+					<div class='test-heading'>
+						<span class='test-name'>Scenario 1</span>
+						<span class='test-time'>Jun 30, 2020 12:23:49 AM</span>
+						<span class='test-status right pass'>pass</span>
+					</div>
+					<div class='test-content hide'>
+<div class='test-time-info'>
+	<span class='label start-time'>Jun 30, 2020 12:23:49 AM</span>
+	<span class='label end-time'>Jun 30, 2020 12:23:49 AM</span>
+	<span class='label time-taken grey lighten-1 white-text'>0h 0m 0s+0ms</span>
+</div>
+	<div class='test-desc'>Creat New List,Create new Segment,Get All list and Verify the lis i present,Delete the created new list </div>
+	<ul class='collapsible node-list' data-collapsible='accordion'>
+		
+				<li class='node level-1 leaf pass' status='pass' test-id='26'>
+					<div class='collapsible-header'>
+						<h5 class='node-name'>newsLetter - Scenario1</h5>
+						<span class="node-time label grey lighten-1 white-text">Jun 30, 2020 03:33:48 PM</span>
+						<span class='node-duration label grey lighten-1 white-text'>0h 1m 20s+311ms</span>
+						<span class='test-status right pass'>pass</span>
+					</div>
+				</li>
+	</ul>
+					</div>
+				</li>
+				
+				
+				<li class='test displayed active has-leaf pass' status='pass' bdd='false' test-id='27'>
+					<div class='test-heading'>
+						<span class='test-name'>Scenario 1</span>
+						<span class='test-time'>Jun 30, 2020 12:26:19 AM</span>
+						<span class='test-status right pass'>pass</span>
+					</div>
+					<div class='test-content hide'>
+<div class='test-time-info'>
+	<span class='label start-time'>Jun 30, 2020 12:26:19 AM</span>
+	<span class='label end-time'>Jun 30, 2020 12:26:19 AM</span>
+	<span class='label time-taken grey lighten-1 white-text'>0h 0m 0s+0ms</span>
+</div>
+	<div class='test-desc'>Creat New List,Create new Segment,Get All list and Verify the lis i present,Delete the created new list </div>
+	<ul class='collapsible node-list' data-collapsible='accordion'>
+		
+				<li class='node level-1 leaf pass' status='pass' test-id='28'>
+					<div class='collapsible-header'>
+						<h5 class='node-name'>newsLetter - Scenario1</h5>
+						<span class="node-time label grey lighten-1 white-text">Jun 30, 2020 03:33:48 PM</span>
+						<span class='node-duration label grey lighten-1 white-text'>0h 1m 20s+318ms</span>
+						<span class='test-status right pass'>pass</span>
+					</div>
+				</li>
+	</ul>
+					</div>
+				</li>
+				
+				
+				<li class='test displayed active has-leaf pass' status='pass' bdd='false' test-id='29'>
+					<div class='test-heading'>
+						<span class='test-name'>Scenario 1</span>
+						<span class='test-time'>Jun 30, 2020 12:27:41 AM</span>
+						<span class='test-status right pass'>pass</span>
+					</div>
+					<div class='test-content hide'>
+<div class='test-time-info'>
+	<span class='label start-time'>Jun 30, 2020 12:27:41 AM</span>
+	<span class='label end-time'>Jun 30, 2020 12:27:41 AM</span>
+	<span class='label time-taken grey lighten-1 white-text'>0h 0m 0s+0ms</span>
+</div>
+	<div class='test-desc'>Creat New List,Create new Segment,Get All list and Verify the lis i present,Delete the created new list </div>
+	<ul class='collapsible node-list' data-collapsible='accordion'>
+		
+				<li class='node level-1 leaf pass' status='pass' test-id='30'>
+					<div class='collapsible-header'>
+						<h5 class='node-name'>newsLetter - Scenario1</h5>
+						<span class="node-time label grey lighten-1 white-text">Jun 30, 2020 03:33:48 PM</span>
+						<span class='node-duration label grey lighten-1 white-text'>0h 1m 20s+327ms</span>
+						<span class='test-status right pass'>pass</span>
+					</div>
+				</li>
+	</ul>
+					</div>
+				</li>
+				
+				
+				<li class='test displayed active has-leaf pass' status='pass' bdd='false' test-id='31'>
+					<div class='test-heading'>
+						<span class='test-name'>Scenario 1</span>
+						<span class='test-time'>Jun 30, 2020 12:28:38 AM</span>
+						<span class='test-status right pass'>pass</span>
+					</div>
+					<div class='test-content hide'>
+<div class='test-time-info'>
+	<span class='label start-time'>Jun 30, 2020 12:28:38 AM</span>
+	<span class='label end-time'>Jun 30, 2020 12:28:38 AM</span>
+	<span class='label time-taken grey lighten-1 white-text'>0h 0m 0s+0ms</span>
+</div>
+	<div class='test-desc'>Creat New List,Create new Segment,Get All list and Verify the lis i present,Delete the created new list </div>
+	<ul class='collapsible node-list' data-collapsible='accordion'>
+		
+				<li class='node level-1 leaf pass' status='pass' test-id='32'>
+					<div class='collapsible-header'>
+						<h5 class='node-name'>newsLetter - Scenario1</h5>
+						<span class="node-time label grey lighten-1 white-text">Jun 30, 2020 03:33:48 PM</span>
+						<span class='node-duration label grey lighten-1 white-text'>0h 1m 20s+493ms</span>
+						<span class='test-status right pass'>pass</span>
+					</div>
+				</li>
+	</ul>
+					</div>
+				</li>
+				
+				
+				<li class='test displayed active has-leaf pass' status='pass' bdd='false' test-id='33'>
+					<div class='test-heading'>
+						<span class='test-name'>Scenario 1</span>
+						<span class='test-time'>Jun 30, 2020 12:31:38 AM</span>
+						<span class='test-status right pass'>pass</span>
+					</div>
+					<div class='test-content hide'>
+<div class='test-time-info'>
+	<span class='label start-time'>Jun 30, 2020 12:31:38 AM</span>
+	<span class='label end-time'>Jun 30, 2020 12:31:38 AM</span>
+	<span class='label time-taken grey lighten-1 white-text'>0h 0m 0s+0ms</span>
+</div>
+	<div class='test-desc'>Creat New List,Create new Segment,Get All list and Verify the lis i present,Delete the created new list </div>
+	<ul class='collapsible node-list' data-collapsible='accordion'>
+		
+				<li class='node level-1 leaf pass' status='pass' test-id='34'>
+					<div class='collapsible-header'>
+						<h5 class='node-name'>newsLetter - Scenario1</h5>
+						<span class="node-time label grey lighten-1 white-text">Jun 30, 2020 03:33:48 PM</span>
+						<span class='node-duration label grey lighten-1 white-text'>0h 1m 20s+498ms</span>
+						<span class='test-status right pass'>pass</span>
+					</div>
+				</li>
+	</ul>
+					</div>
+				</li>
+				
+				
+				<li class='test displayed active has-leaf pass' status='pass' bdd='false' test-id='35'>
+					<div class='test-heading'>
+						<span class='test-name'>Scenario 1</span>
+						<span class='test-time'>Jun 30, 2020 12:33:19 AM</span>
+						<span class='test-status right pass'>pass</span>
+					</div>
+					<div class='test-content hide'>
+<div class='test-time-info'>
+	<span class='label start-time'>Jun 30, 2020 12:33:19 AM</span>
+	<span class='label end-time'>Jun 30, 2020 12:33:19 AM</span>
+	<span class='label time-taken grey lighten-1 white-text'>0h 0m 0s+0ms</span>
+</div>
+	<div class='test-desc'>Creat New List,Create new Segment,Get All list and Verify the lis i present,Delete the created new list </div>
+	<ul class='collapsible node-list' data-collapsible='accordion'>
+		
+				<li class='node level-1 leaf pass' status='pass' test-id='36'>
+					<div class='collapsible-header'>
+						<h5 class='node-name'>newsLetter - Scenario1</h5>
+						<span class="node-time label grey lighten-1 white-text">Jun 30, 2020 03:33:48 PM</span>
+						<span class='node-duration label grey lighten-1 white-text'>0h 1m 20s+503ms</span>
+						<span class='test-status right pass'>pass</span>
+					</div>
+				</li>
+	</ul>
+					</div>
+				</li>
+				
+				
+				<li class='test displayed active  pass' status='pass' bdd='false' test-id='37'>
+					<div class='test-heading'>
+						<span class='test-name'>Scenario 1</span>
+						<span class='test-time'>Jun 30, 2020 03:07:08 PM</span>
+						<span class='test-status right pass'>pass</span>
+					</div>
+					<div class='test-content hide'>
+<div class='test-time-info'>
+	<span class='label start-time'>Jun 30, 2020 03:07:08 PM</span>
+	<span class='label end-time'>Jun 30, 2020 03:07:08 PM</span>
+	<span class='label time-taken grey lighten-1 white-text'>0h 0m 0s+0ms</span>
+</div>
+	<div class='test-desc'>Creat New List,Create new Segment,Get All list and Verify the lis i present,Delete the created new list </div>
+					</div>
+				</li>
+				
+				
+				<li class='test displayed active has-leaf pass' status='pass' bdd='false' test-id='38'>
+					<div class='test-heading'>
+						<span class='test-name'>Scenario 1</span>
+						<span class='test-time'>Jun 30, 2020 03:08:44 PM</span>
+						<span class='test-status right pass'>pass</span>
+					</div>
+					<div class='test-content hide'>
+<div class='test-time-info'>
+	<span class='label start-time'>Jun 30, 2020 03:08:44 PM</span>
+	<span class='label end-time'>Jun 30, 2020 03:08:44 PM</span>
+	<span class='label time-taken grey lighten-1 white-text'>0h 0m 0s+0ms</span>
+</div>
+	<div class='test-desc'>Creat New List,Create new Segment,Get All list and Verify the lis i present,Delete the created new list </div>
+	<ul class='collapsible node-list' data-collapsible='accordion'>
+		
+				<li class='node level-1 leaf pass' status='pass' test-id='39'>
+					<div class='collapsible-header'>
+						<h5 class='node-name'>newsLetter - Scenario1</h5>
+						<span class="node-time label grey lighten-1 white-text">Jun 30, 2020 03:33:48 PM</span>
+						<span class='node-duration label grey lighten-1 white-text'>0h 1m 20s+516ms</span>
+						<span class='test-status right pass'>pass</span>
+					</div>
+				</li>
+	</ul>
+					</div>
+				</li>
+				
+				
+				<li class='test displayed active has-leaf pass' status='pass' bdd='false' test-id='40'>
+					<div class='test-heading'>
+						<span class='test-name'>Scenario 1</span>
+						<span class='test-time'>Jun 30, 2020 03:11:42 PM</span>
+						<span class='test-status right pass'>pass</span>
+					</div>
+					<div class='test-content hide'>
+<div class='test-time-info'>
+	<span class='label start-time'>Jun 30, 2020 03:11:42 PM</span>
+	<span class='label end-time'>Jun 30, 2020 03:11:42 PM</span>
+	<span class='label time-taken grey lighten-1 white-text'>0h 0m 0s+0ms</span>
+</div>
+	<div class='test-desc'>Creat New List,Create new Segment,Get All list and Verify the lis i present,Delete the created new list </div>
+	<ul class='collapsible node-list' data-collapsible='accordion'>
+		
+				<li class='node level-1 leaf pass' status='pass' test-id='41'>
+					<div class='collapsible-header'>
+						<h5 class='node-name'>newsLetter - Scenario1</h5>
+						<span class="node-time label grey lighten-1 white-text">Jun 30, 2020 03:33:48 PM</span>
+						<span class='node-duration label grey lighten-1 white-text'>0h 1m 20s+520ms</span>
+						<span class='test-status right pass'>pass</span>
+					</div>
+				</li>
+	</ul>
+					</div>
+				</li>
+				
+				
+				<li class='test displayed active has-leaf pass' status='pass' bdd='false' test-id='42'>
+					<div class='test-heading'>
+						<span class='test-name'>Scenario 2</span>
+						<span class='test-time'>Jun 30, 2020 03:17:28 PM</span>
+						<span class='test-status right pass'>pass</span>
+					</div>
+					<div class='test-content hide'>
+<div class='test-time-info'>
+	<span class='label start-time'>Jun 30, 2020 03:17:28 PM</span>
+	<span class='label end-time'>Jun 30, 2020 03:17:28 PM</span>
+	<span class='label time-taken grey lighten-1 white-text'>0h 0m 0s+0ms</span>
+</div>
+	<div class='test-desc'>Get the user List and update the user details </div>
+	<ul class='collapsible node-list' data-collapsible='accordion'>
+		
+				<li class='node level-1 leaf pass' status='pass' test-id='43'>
+					<div class='collapsible-header'>
+						<h5 class='node-name'>newsLetter - Scenario2</h5>
+						<span class="node-time label grey lighten-1 white-text">Jun 30, 2020 03:33:48 PM</span>
+						<span class='node-duration label grey lighten-1 white-text'>0h 1m 20s+527ms</span>
+						<span class='test-status right pass'>pass</span>
+					</div>
+				</li>
+	</ul>
+					</div>
+				</li>
+				
+				
+				<li class='test displayed active has-leaf pass' status='pass' bdd='false' test-id='44'>
+					<div class='test-heading'>
+						<span class='test-name'>Scenario 2</span>
+						<span class='test-time'>Jun 30, 2020 03:29:08 PM</span>
+						<span class='test-status right pass'>pass</span>
+					</div>
+					<div class='test-content hide'>
+<div class='test-time-info'>
+	<span class='label start-time'>Jun 30, 2020 03:29:08 PM</span>
+	<span class='label end-time'>Jun 30, 2020 03:29:17 PM</span>
+	<span class='label time-taken grey lighten-1 white-text'>0h 0m 9s+0ms</span>
+</div>
+	<div class='test-desc'>Get the user List and update the user details </div>
+	<ul class='collapsible node-list' data-collapsible='accordion'>
+		
+				<li class='node level-1 leaf pass' status='pass' test-id='45'>
+					<div class='collapsible-header'>
+						<h5 class='node-name'>newsLetter - Scenario2</h5>
+						<span class="node-time label grey lighten-1 white-text">Jun 30, 2020 03:33:48 PM</span>
+						<span class='node-duration label grey lighten-1 white-text'>0h 1m 20s+529ms</span>
+						<span class='test-status right pass'>pass</span>
+					</div>
+						<div class='collapsible-body'>
+								<div class='node-steps'>
+									<table class='bordered table-results'>
+										<thead>
+											<tr>
+												<th>Status</th>
+												<th>Timestamp</th>
+												<th>Details</th>
+											</tr>
+										</thead>
+										<tbody>
+												<tr class='log' status='pass'>
+													<td class='status pass' title='pass' alt='pass'><i class='material-icons'>check_circle</i></td>
+													<td class='timestamp'>3:29:17 PM</td>
+													<td class='step-details'>The status code 200 matches the expected code</td>
+												</tr>
+										</tbody>
+									</table>
+								</div>
+						</div>
+				</li>
+	</ul>
+					</div>
+				</li>
+				
+				
+				<li class='test displayed active has-leaf pass' status='pass' bdd='false' test-id='46'>
+					<div class='test-heading'>
+						<span class='test-name'>Scenario 2</span>
+						<span class='test-time'>Jun 30, 2020 03:30:44 PM</span>
+						<span class='test-status right pass'>pass</span>
+					</div>
+					<div class='test-content hide'>
+<div class='test-time-info'>
+	<span class='label start-time'>Jun 30, 2020 03:30:44 PM</span>
+	<span class='label end-time'>Jun 30, 2020 03:30:52 PM</span>
+	<span class='label time-taken grey lighten-1 white-text'>0h 0m 8s+0ms</span>
+</div>
+	<div class='test-desc'>Get the user List and update the user details </div>
+	<ul class='collapsible node-list' data-collapsible='accordion'>
+		
+				<li class='node level-1 leaf pass' status='pass' test-id='47'>
+					<div class='collapsible-header'>
+						<h5 class='node-name'>newsLetter - Scenario2</h5>
+						<span class="node-time label grey lighten-1 white-text">Jun 30, 2020 03:33:48 PM</span>
+						<span class='node-duration label grey lighten-1 white-text'>0h 1m 20s+535ms</span>
+						<span class='test-status right pass'>pass</span>
+					</div>
+						<div class='collapsible-body'>
+								<div class='node-steps'>
+									<table class='bordered table-results'>
+										<thead>
+											<tr>
+												<th>Status</th>
+												<th>Timestamp</th>
+												<th>Details</th>
+											</tr>
+										</thead>
+										<tbody>
+												<tr class='log' status='pass'>
+													<td class='status pass' title='pass' alt='pass'><i class='material-icons'>check_circle</i></td>
+													<td class='timestamp'>3:30:52 PM</td>
+													<td class='step-details'>The status code 200 matches the expected code</td>
+												</tr>
+										</tbody>
+									</table>
+								</div>
+						</div>
+				</li>
+	</ul>
+					</div>
+				</li>
+				
+				
+				<li class='test displayed active has-leaf pass' status='pass' bdd='false' test-id='48'>
+					<div class='test-heading'>
+						<span class='test-name'>Scenario 2</span>
+						<span class='test-time'>Jun 30, 2020 03:31:45 PM</span>
+						<span class='test-status right pass'>pass</span>
+					</div>
+					<div class='test-content hide'>
+<div class='test-time-info'>
+	<span class='label start-time'>Jun 30, 2020 03:31:45 PM</span>
+	<span class='label end-time'>Jun 30, 2020 03:31:54 PM</span>
+	<span class='label time-taken grey lighten-1 white-text'>0h 0m 9s+0ms</span>
+</div>
+	<div class='test-desc'>Get the user List and update the user details </div>
+	<ul class='collapsible node-list' data-collapsible='accordion'>
+		
+				<li class='node level-1 leaf pass' status='pass' test-id='49'>
+					<div class='collapsible-header'>
+						<h5 class='node-name'>newsLetter - Scenario2</h5>
+						<span class="node-time label grey lighten-1 white-text">Jun 30, 2020 03:33:48 PM</span>
+						<span class='node-duration label grey lighten-1 white-text'>0h 1m 20s+550ms</span>
+						<span class='test-status right pass'>pass</span>
+					</div>
+						<div class='collapsible-body'>
+								<div class='node-steps'>
+									<table class='bordered table-results'>
+										<thead>
+											<tr>
+												<th>Status</th>
+												<th>Timestamp</th>
+												<th>Details</th>
+											</tr>
+										</thead>
+										<tbody>
+												<tr class='log' status='pass'>
+													<td class='status pass' title='pass' alt='pass'><i class='material-icons'>check_circle</i></td>
+													<td class='timestamp'>3:31:54 PM</td>
+													<td class='step-details'>The status code 200 matches the expected code</td>
+												</tr>
+										</tbody>
+									</table>
+								</div>
+						</div>
+				</li>
+	</ul>
+					</div>
+				</li>
+				
+				
+				<li class='test displayed active has-leaf pass' status='pass' bdd='false' test-id='50'>
+					<div class='test-heading'>
+						<span class='test-name'>Scenario 2</span>
+						<span class='test-time'>Jun 30, 2020 03:32:28 PM</span>
+						<span class='test-status right pass'>pass</span>
+					</div>
+					<div class='test-content hide'>
+<div class='test-time-info'>
+	<span class='label start-time'>Jun 30, 2020 03:32:28 PM</span>
+	<span class='label end-time'>Jun 30, 2020 03:32:37 PM</span>
+	<span class='label time-taken grey lighten-1 white-text'>0h 0m 9s+0ms</span>
+</div>
+	<div class='test-desc'>Get the user List and update the user details </div>
+	<ul class='collapsible node-list' data-collapsible='accordion'>
+		
+				<li class='node level-1 leaf pass' status='pass' test-id='51'>
+					<div class='collapsible-header'>
+						<h5 class='node-name'>newsLetter - Scenario2</h5>
+						<span class="node-time label grey lighten-1 white-text">Jun 30, 2020 03:33:48 PM</span>
+						<span class='node-duration label grey lighten-1 white-text'>0h 1m 11s+555ms</span>
+						<span class='test-status right pass'>pass</span>
+					</div>
+						<div class='collapsible-body'>
+								<div class='node-steps'>
+									<table class='bordered table-results'>
+										<thead>
+											<tr>
+												<th>Status</th>
+												<th>Timestamp</th>
+												<th>Details</th>
+											</tr>
+										</thead>
+										<tbody>
+												<tr class='log' status='pass'>
+													<td class='status pass' title='pass' alt='pass'><i class='material-icons'>check_circle</i></td>
+													<td class='timestamp'>3:32:37 PM</td>
+													<td class='step-details'>The status code 200 matches the expected code</td>
+												</tr>
+										</tbody>
+									</table>
+								</div>
+						</div>
+				</li>
+	</ul>
+					</div>
+				</li>
+				
+				
+				<li class='test displayed active has-leaf pass' status='pass' bdd='false' test-id='52'>
+					<div class='test-heading'>
+						<span class='test-name'>Scenario 2</span>
+						<span class='test-time'>Jun 30, 2020 03:33:48 PM</span>
+						<span class='test-status right pass'>pass</span>
+					</div>
+					<div class='test-content hide'>
+<div class='test-time-info'>
+	<span class='label start-time'>Jun 30, 2020 03:33:48 PM</span>
+	<span class='label end-time'>Jun 30, 2020 03:33:57 PM</span>
+	<span class='label time-taken grey lighten-1 white-text'>0h 0m 8s+644ms</span>
+</div>
+	<div class='test-desc'>Get the user List and update the user details </div>
+	<ul class='collapsible node-list' data-collapsible='accordion'>
+		
+				<li class='node level-1 leaf pass' status='pass' test-id='53'>
+					<div class='collapsible-header'>
+						<h5 class='node-name'>newsLetter - Scenario2</h5>
+						<span class="node-time label grey lighten-1 white-text">Jun 30, 2020 03:33:57 PM</span>
+						<span class='node-duration label grey lighten-1 white-text'>0h 0m 8s+607ms</span>
+						<span class='test-status right pass'>pass</span>
+								<span class='category label white-text'>API</span>
+								<span class='author label white-text'>Ram</span>
+					</div>
+						<div class='collapsible-body'>
+								<div class='node-steps'>
+									<table class='bordered table-results'>
+										<thead>
+											<tr>
+												<th>Status</th>
+												<th>Timestamp</th>
+												<th>Details</th>
+											</tr>
+										</thead>
+										<tbody>
+												<tr class='log' status='pass'>
+													<td class='status pass' title='pass' alt='pass'><i class='material-icons'>check_circle</i></td>
+													<td class='timestamp'>3:33:57 PM</td>
+													<td class='step-details'>The status code 200 matches the expected code</td>
+												</tr>
+										</tbody>
+									</table>
+								</div>
+						</div>
+				</li>
+	</ul>
+					</div>
+				</li>
+			</ul>
+		</div>
+	</div>
+	<!-- subview left -->
+
+	<div class='subview-right left'>
+		<div class='view-summary'>
+			<h5 class='test-name'></h5>
+
+			<div id='step-filters' class="right">
+				<span class="blue-text" status="info" alt="info" title="info"><i class="material-icons">info_outline</i></span>
+				<span class="green-text" status="pass" alt="pass" title="pass"><i class="material-icons">check_circle</i></span>
+				<span class="red-text" status="fail" alt="fail" title="fail"><i class="material-icons">cancel</i></span>
+				<span class="red-text text-darken-4" status="fatal" alt="fatal" title="fatal"><i class="material-icons">cancel</i></span>
+				<span class="pink-text text-lighten-1" status="error" alt="error" title="error"><i class="material-icons">error</i></span>
+				<span class="orange-text" alt="warning" status="warning" title="warning"><i class="material-icons">warning</i></span>
+				<span class="teal-text" status="skip" alt="skip" title="skip"><i class="material-icons">redo</i></span>
+				<span status="clear" alt="Clear filters" title="Clear filters"><i class="material-icons">clear</i></span>
+			</div>
+		</div>
+	</div>
+	<!-- subview right -->
+
+</div>
+<!-- test view -->
+<div id='category-view' class='view hide'>
+
+	<section id='controls'>
+		<div class='controls grey lighten-4'>
+			<!-- search -->
+			<div class='chip transparent' alt='Search Tests' title='Search Tests'>
+				<a href="#" class='search-div'>
+					<i class='material-icons'>search</i> Search
+				</a>
+				
+				<div class='input-field left hide'>
+					<input id='search-tests' type='text' class='validate browser-default' placeholder='Search Tests...'>
+				</div>
+				
+			</div>
+			<!-- search -->
+		</div>
+	</section>
+
+	<div class='subview-left left'>
+		
+		<div class='view-summary'>
+			<h5>Categories</h3>
+			<ul id='category-collection' class='category-collection'>
+				
+				<li class='category displayed active'>
+					<div class='category-heading'>
+						<span class='category-name'>API</span>
+						<span class='category-status right'>
+							<span class='label pass'>1</span>
+						</span>
+					</div>
+					<div class='category-content hide'>
+						<div class='category-status-counts'>
+							<span class='label green accent-4 white-text'>Passed: 1</span>
+							
+							
+						</div>
+					
+						<div class='category-tests'>
+							<table class='bordered table-results'>
+								<thead>
+									<tr>
+										<th>Timestamp</th>
+										<th>TestName</th>
+										<th>Status</th>
+									</tr>
+								</thead>
+								<tbody>
+									<tr>
+										<td>Jun 30, 2020 03:33:48 PM</td>
+										<td class='linked' test-id='53'>Scenario 2.newsLetter - Scenario2</td>
+										<td><span class='test-status pass'>pass</span></td>
+									</tr>
+								</tbody>
+							</table>
+						</div>
+					</div>
+				</li>
+
+			</ul>
+		</div>
+	</div>
+
+	<div class='subview-right left'>
+		<div class='view-summary'>
+			<h5 class='category-name'></h5>
+		</div>
+	</div>
+</div>
+<!-- category view -->
+<div id='author-view' class='view hide'>
+    <section id='controls'>
+        <div class='controls grey lighten-4'>
+            <!-- search -->
+            <div class='chip transparent' alt='Search Authors' title='Search Authors'>
+                <a href="#" class='search-div'>
+                    <i class='material-icons'>search</i> Search
+                </a>
+
+                <div class='input-field left hide'>
+                    <input id='search-tests' type='text' class='validate browser-default' placeholder='Search Authors...'>
+                </div>
+
+            </div>
+            <!-- search -->
+        </div>
+    </section>
+
+    <div class='subview-left left'>
+
+        <div class='view-summary'>
+            <h5>Authors</h5>
+                <ul id='author-collection' class='author-collection'>
+
+                        <li class='author displayed active'>
+                            <div class='author-heading'>
+                                <span class='author-name'>Ram</span>
+                                <span class='author-status right'>
+                                        <span class='label pass'>1</span>
+						        </span>
+                            </div>
+                            <div class='author-content hide'>
+                                <div class='author-status-counts'>
+                                    <span class='label green accent-4 white-text'>Passed: 1</span>
+                                    
+                                    
+                                </div>
+
+                                <div class='author-tests'>
+                                    <table class='bordered table-results'>
+                                        <thead>
+                                        <tr>
+                                            <th>Timestamp</th>
+                                            <th>TestName</th>
+                                            <th>Status</th>
+                                        </tr>
+                                        </thead>
+                                        <tbody>
+                                            <tr>
+                                                <td>Jun 30, 2020 03:33:48 PM</td>
+                                                <td class='linked' test-id='53'>Scenario 2.newsLetter - Scenario2</td>
+                                                <td><span class='test-status pass'>pass</span></td>
+                                            </tr>
+                                        </tbody>
+                                    </table>
+                                </div>
+                            </div>
+                        </li>
+
+                </ul>
+        </div>
+    </div>
+
+    <div class='subview-right left'>
+        <div class='view-summary'>
+            <h5 class='author-name'></h5>
+        </div>
+    </div>
+</div>
+<!-- exception view -->
+<div id='dashboard-view' class='view hide'>
+	<div class='card-panel transparent np-v'>
+		<h5>Dashboard</h5>
+
+		<div class='row'>
+			<div class='col s2'>
+				<div class='card-panel r'>
+					Tests
+					<div class='panel-lead'>27</div>
+				</div>
+			</div>
+			<div class='col s2'>
+				<div class='card-panel r'>
+					Steps
+					<div class='panel-lead'>34</div>
+				</div>
+			</div>
+			<div class='col s2'>
+				<div class='card-panel r'>
+					Start
+					<div class='panel-lead'>Jun 30, 2020 03:33:47 PM</div>
+				</div>
+			</div>
+			<div class='col s2'>
+				<div class='card-panel r'>
+			 		End
+			 		<div class='panel-lead'>Jun 30, 2020 03:33:58 PM</div>
+				</div>
+			</div>
+			<div class='col s2'>
+				<div class='card-panel r'>
+					Time Taken
+					<div class='panel-lead'>0h 0m 11s+429ms</div>
+				</div>
+			</div>
+			<div class='col s6'>
+				<div class='card-panel dashboard-categories'>
+					<span class='right label cyan white-text'>Categories</span><p>&nbsp;</p>
+					
+					<table>
+						<tr>
+							<th>Name</th>
+							<th>Passed</th>
+							<th>Failed</th>
+							<th>Others</th>
+							<th>Passed %</th>
+						</tr>
+						<tr>
+							<td>API</td>
+							<td>1</td>
+							<td>0</td>
+							<td>0</td>
+							<td>
+									100%
+							</td>
+						</tr>
+					</table>
+				</div>
+			</div>
+		</div>
+	</div>
+</div>
+<!-- dashboard view -->
+<!-- testrunner-logs view -->
+		</div>
+		<!-- container -->
+
+		<script>
+			var statusGroup = {
+				passParent: 27,
+				failParent: 0,
+				fatalParent: 0,
+				errorParent: 0,
+				warningParent: 0,
+				skipParent: 0,
+				exceptionsParent: 0,
+				
+				passChild: 34,
+				failChild: 0,
+				fatalChild: 0,
+				errorChild: 0,
+				warningChild: 0,
+				skipChild: 0,
+				infoChild: 0,
+				exceptionsChild: 0,
+				
+				passGrandChild: 0,
+				failGrandChild: 0,
+				fatalGrandChild: 0,
+				errorGrandChild: 0,
+				warningGrandChild: 0,
+				skipGrandChild: 0,
+				infoGrandChild: 0,
+				exceptionsGrandChild: 0,
+			};
+		</script>
+		
+			<script src='https://cdn.rawgit.com/anshooarora/extentreports-java/fca20fb7653aade98810546ab96a2a4360e3e712/dist/js/extent.js' type='text/javascript'></script>
+		
+		
+ 		<script type='text/javascript'>
+ 			
+      
+        $(document).ready(function() {
+          
+        });
+      
+    
+ 		</script>
+	</body>
+	
+</html>
