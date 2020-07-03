@@ -95,6 +95,15 @@ public class RESTAssuredBase extends PreAndTest{
 				.body(jsonObject)
 				.post(URL);
 	}
+	public static Response postWithHeaderAndJsonAsFile(Map<String, String> headers,
+			File bodyFile, String URL) {
+
+		return setLogs()
+				.when()
+				.headers(headers)
+				.body(bodyFile)
+				.post(URL);
+	}
 
 
 	public static Response postWithHeaderParam(Map<String, String> headers, String URL) {
@@ -134,6 +143,11 @@ public class RESTAssuredBase extends PreAndTest{
 
 		return RestAssured.given().headers(headers).contentType(getContentType()).request()
 				.body(jsonObject).when().put(URL);
+	}
+	public static Response putWithHeaderAndBodyParam(Map<String, String> headers,
+			String jsonObject, String URL) {
+
+		return RestAssured.given().headers(headers).body(jsonObject).when().put(URL);
 	}
 	
 	public static ValidatableResponse enableResponseLog(Response response) {

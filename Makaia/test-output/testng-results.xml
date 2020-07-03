@@ -2,40 +2,16 @@
 <testng-results skipped="0" failed="0" ignored="0" total="1" passed="1">
   <reporter-output>
   </reporter-output>
-  <suite name="Default suite" duration-ms="10000" started-at="2020-06-30T15:33:48 IST" finished-at="2020-06-30T15:33:58 IST">
+  <suite name="Default suite" duration-ms="8122" started-at="2020-07-03T16:41:12 IST" finished-at="2020-07-03T16:41:20 IST">
     <groups>
     </groups>
-    <test name="Default test" duration-ms="10000" started-at="2020-06-30T15:33:48 IST" finished-at="2020-06-30T15:33:58 IST">
-      <class name="tests.rest.Scenario2">
-        <test-method status="PASS" signature="beforeSuite()[pri:0, instance:tests.rest.Scenario2@543c6f6d]" name="beforeSuite" is-config="true" duration-ms="2812" started-at="2020-06-30T15:33:45 IST" finished-at="2020-06-30T15:33:48 IST">
+    <test name="Default test" duration-ms="8122" started-at="2020-07-03T16:41:12 IST" finished-at="2020-07-03T16:41:20 IST">
+      <class name="tests.rest.UpdateApp">
+        <test-method status="PASS" signature="updateApp()[pri:0, instance:tests.rest.UpdateApp@29b5cd00]" name="updateApp" duration-ms="7970" started-at="2020-07-03T16:41:12 IST" finished-at="2020-07-03T16:41:20 IST">
           <reporter-output>
           </reporter-output>
-        </test-method> <!-- beforeSuite -->
-        <test-method status="PASS" signature="setValues()[pri:0, instance:tests.rest.Scenario2@543c6f6d]" name="setValues" is-config="true" duration-ms="0" started-at="2020-06-30T15:33:48 IST" finished-at="2020-06-30T15:33:48 IST">
-          <reporter-output>
-          </reporter-output>
-        </test-method> <!-- setValues -->
-        <test-method status="PASS" signature="beforeClass()[pri:0, instance:tests.rest.Scenario2@543c6f6d]" name="beforeClass" is-config="true" duration-ms="4" started-at="2020-06-30T15:33:48 IST" finished-at="2020-06-30T15:33:48 IST">
-          <reporter-output>
-          </reporter-output>
-        </test-method> <!-- beforeClass -->
-        <test-method status="PASS" signature="beforeMethod()[pri:0, instance:tests.rest.Scenario2@543c6f6d]" name="beforeMethod" is-config="true" duration-ms="58" started-at="2020-06-30T15:33:48 IST" finished-at="2020-06-30T15:33:48 IST">
-          <reporter-output>
-          </reporter-output>
-        </test-method> <!-- beforeMethod -->
-        <test-method status="PASS" signature="scenario2()[pri:0, instance:tests.rest.Scenario2@543c6f6d]" name="scenario2" duration-ms="9847" started-at="2020-06-30T15:33:48 IST" finished-at="2020-06-30T15:33:58 IST">
-          <reporter-output>
-          </reporter-output>
-        </test-method> <!-- scenario2 -->
-        <test-method status="PASS" signature="afterMethod()[pri:0, instance:tests.rest.Scenario2@543c6f6d]" name="afterMethod" is-config="true" duration-ms="0" started-at="2020-06-30T15:33:58 IST" finished-at="2020-06-30T15:33:58 IST">
-          <reporter-output>
-          </reporter-output>
-        </test-method> <!-- afterMethod -->
-        <test-method status="PASS" signature="afterSuite()[pri:0, instance:tests.rest.Scenario2@543c6f6d]" name="afterSuite" is-config="true" duration-ms="960" started-at="2020-06-30T15:33:58 IST" finished-at="2020-06-30T15:33:59 IST">
-          <reporter-output>
-          </reporter-output>
-        </test-method> <!-- afterSuite -->
-      </class> <!-- tests.rest.Scenario2 -->
+        </test-method> <!-- updateApp -->
+      </class> <!-- tests.rest.UpdateApp -->
     </test> <!-- Default test -->
   </suite> <!-- Default suite -->
 </testng-results>

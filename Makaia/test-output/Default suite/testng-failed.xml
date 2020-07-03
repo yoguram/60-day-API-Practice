@@ -3,17 +3,11 @@
 <suite guice-stage="DEVELOPMENT" name="Failed suite [Default suite]">
   <test thread-count="5" name="Default test(failed)">
     <classes>
-      <class name="tests.rest.Scenario2">
+      <class name="tests.rest.UpdateApp">
         <methods>
-          <include name="setValues"/>
-          <include name="scenario2"/>
-          <include name="beforeClass"/>
-          <include name="beforeSuite"/>
-          <include name="afterSuite"/>
-          <include name="beforeMethod"/>
-          <include name="afterMethod"/>
+          <include name="updateApp"/>
         </methods>
-      </class> <!-- tests.rest.Scenario2 -->
+      </class> <!-- tests.rest.UpdateApp -->
     </classes>
   </test> <!-- Default test(failed) -->
 </suite> <!-- Failed suite [Default suite] -->
