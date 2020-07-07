@@ -3,11 +3,17 @@
 <suite guice-stage="DEVELOPMENT" name="Failed suite [Default suite]">
   <test thread-count="5" name="Default test(failed)">
     <classes>
-      <class name="tests.rest.UpdateApp">
+      <class name="tests.rest.Amio_Scenario_2">
         <methods>
-          <include name="updateApp"/>
+          <include name="beforeClass"/>
+          <include name="viberBot" invocation-numbers="0"/>
+          <include name="beforeSuite"/>
+          <include name="afterSuite"/>
+          <include name="beforeMethod"/>
+          <include name="afterMethod"/>
+          <include name="setValues"/>
         </methods>
-      </class> <!-- tests.rest.UpdateApp -->
+      </class> <!-- tests.rest.Amio_Scenario_2 -->
     </classes>
   </test> <!-- Default test(failed) -->
 </suite> <!-- Failed suite [Default suite] -->

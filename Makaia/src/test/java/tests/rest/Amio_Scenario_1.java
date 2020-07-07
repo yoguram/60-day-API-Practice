@@ -2,7 +2,7 @@ package tests.rest;
 
 import java.io.File;
 import java.util.List;
-
+import static org.hamcrest.Matchers.hasItems;
 import org.testng.annotations.BeforeSuite;
 import org.testng.annotations.Test;
 
@@ -32,16 +32,17 @@ public class Amio_Scenario_1 extends RESTAssuredBase {
 		Response createChannel = postWithBodyAsFileAndUrl(file, "/channels");
 		createChannel.prettyPrint();
 		channelID = createChannel.jsonPath().get("id");
-
+		
 		// Verify the channel created
 
 		Response getChannels = get("/channels");
-		List<String> channelsList = getChannels.jsonPath().get("id");
-		for (String eachValue : channelsList) {
-			if (eachValue.equalsIgnoreCase(channelID)) {
-				System.out.println("Channel created Successfully");
-			}
-		}
+		getChannels.then().assertThat().body("id",hasItems(channelID));
+		//verifyContentsWithKey(getChannels, "id", channelID);
+		/*
+		 * for (String eachValue : channelsList) { if
+		 * (eachValue.equalsIgnoreCase(channelID)) {
+		 * System.out.println("Channel created Successfully"); } }
+		 */
 
 		// Delete the created Channel
 

@@ -2,7 +2,7 @@ package tests.rest;
 
 import java.io.File;
 import java.util.List;
-
+import static org.hamcrest.Matchers.hasItems;
 import org.testng.annotations.BeforeTest;
 import org.testng.annotations.Test;
 
@@ -47,15 +47,16 @@ public class Amio_Scenario_2 extends RESTAssuredBase {
 
 		Response verifyMessages = get("/channels/6686165288008567142/contacts/6686165406120168208/messages");
 		verifyMessages.prettyPrint();
-
-		List<String> messages = verifyMessages.jsonPath().get("id");
-		for (String eachMessage : messages) {
-			if (eachMessage.equalsIgnoreCase(fileMessageID)) {
-				System.out.println("Picture Message Sent Successfully");
-			} else if (eachMessage.equalsIgnoreCase(messageID)) {
-				System.out.println("Text message Sent Successfully");
-			}
-		}
+		verifyMessages.then().assertThat().body("id",hasItems(messageID,fileMessageID ));
+		//verifyContentsWithKey(verifyMessages, "id", messageID);
+		//verifyContentsWithKey(verifyMessages, "id", fileMessageID);
+		/*
+		 * List<String> messages = verifyMessages.jsonPath().get("id"); for (String
+		 * eachMessage : messages) { if (eachMessage.equalsIgnoreCase(fileMessageID)) {
+		 * System.out.println("Picture Message Sent Successfully"); } else if
+		 * (eachMessage.equalsIgnoreCase(messageID)) {
+		 * System.out.println("Text message Sent Successfully"); } }
+		 */
 
 	}
 }
