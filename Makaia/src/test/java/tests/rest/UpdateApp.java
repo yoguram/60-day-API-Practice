@@ -17,7 +17,7 @@ public class UpdateApp {
 	public void updateApp()
 	{
 		RestAssured.baseURI="https://dev-728215-admin.okta.com";
-		File app = new File("data/ss.png");
+		File app = new File("./data/ss.png");
 		Response response =  RestAssured
 				.given()
 				.header("Authorization", "SSWS00TLzU6N8V0T7oIdHOmWi3dbXOk6CW18GN-80Sx3gT")

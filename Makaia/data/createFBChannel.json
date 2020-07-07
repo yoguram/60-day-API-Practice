@@ -1,0 +1,12 @@
+{
+  "type": "facebook_messenger",
+  "name": "Amio New",
+  "mode": "production",
+  "webhook": {
+    "url": "https://requestb.in/tqp125tq"
+  },
+  "facebook_page": {
+        "id": "109558717490274",
+        "access_token": "EAAZAqmOEDma8BAOqhvUSrwLxKlLhgoKZAjmzPS8ZB2hyIZCVJx1KZBv1P4TrmiSqDBjNf3NabBcoMs0uykhI0mrJnXrYI9AydLx5Fa8ec1VrbZAipcl4j7wt8M5AV9TpuNsJb3ZAidPvvfJtye5GapMiRcOBFfnXJpZCeBJi1cNuFAZDZD"
+    }
+}
