@@ -2,47 +2,40 @@
 <testng-results skipped="0" failed="0" ignored="0" total="1" passed="1">
   <reporter-output>
   </reporter-output>
-  <suite name="Default suite" duration-ms="11369" started-at="2020-07-07T13:48:01 IST" finished-at="2020-07-07T13:48:13 IST">
+  <suite name="Default suite" duration-ms="5154" started-at="2020-07-14T02:11:14 IST" finished-at="2020-07-14T02:11:20 IST">
     <groups>
     </groups>
-    <test name="Default test" duration-ms="11369" started-at="2020-07-07T13:48:01 IST" finished-at="2020-07-07T13:48:13 IST">
-      <class name="tests.rest.Amio_Scenario_2">
-        <test-method status="PASS" signature="beforeSuite()[pri:0, instance:tests.rest.Amio_Scenario_2@543c6f6d]" name="beforeSuite" is-config="true" duration-ms="4315" started-at="2020-07-07T13:47:57 IST" finished-at="2020-07-07T13:48:01 IST">
+    <test name="Default test" duration-ms="5154" started-at="2020-07-14T02:11:14 IST" finished-at="2020-07-14T02:11:20 IST">
+      <class name="tests.rest.FreshBooks_Estimate">
+        <test-method status="PASS" signature="beforeSuite()[pri:0, instance:tests.rest.FreshBooks_Estimate@12f41634]" name="beforeSuite" is-config="true" duration-ms="1377" started-at="2020-07-14T02:11:13 IST" finished-at="2020-07-14T02:11:14 IST">
           <reporter-output>
           </reporter-output>
         </test-method> <!-- beforeSuite -->
-        <test-method status="PASS" signature="setValues()[pri:0, instance:tests.rest.Amio_Scenario_2@543c6f6d]" name="setValues" is-config="true" duration-ms="1" started-at="2020-07-07T13:48:01 IST" finished-at="2020-07-07T13:48:01 IST">
+        <test-method status="PASS" signature="setValues()[pri:0, instance:tests.rest.FreshBooks_Estimate@12f41634]" name="setValues" is-config="true" duration-ms="0" started-at="2020-07-14T02:11:14 IST" finished-at="2020-07-14T02:11:14 IST">
           <reporter-output>
           </reporter-output>
         </test-method> <!-- setValues -->
-        <test-method status="PASS" signature="beforeClass()[pri:0, instance:tests.rest.Amio_Scenario_2@543c6f6d]" name="beforeClass" is-config="true" duration-ms="3" started-at="2020-07-07T13:48:02 IST" finished-at="2020-07-07T13:48:02 IST">
+        <test-method status="PASS" signature="beforeClass()[pri:0, instance:tests.rest.FreshBooks_Estimate@12f41634]" name="beforeClass" is-config="true" duration-ms="2" started-at="2020-07-14T02:11:14 IST" finished-at="2020-07-14T02:11:14 IST">
           <reporter-output>
           </reporter-output>
         </test-method> <!-- beforeClass -->
-        <test-method status="PASS" signature="beforeMethod()[pri:0, instance:tests.rest.Amio_Scenario_2@543c6f6d]" name="beforeMethod" is-config="true" duration-ms="21" started-at="2020-07-07T13:48:02 IST" finished-at="2020-07-07T13:48:02 IST">
+        <test-method status="PASS" signature="beforeMethod()[pri:0, instance:tests.rest.FreshBooks_Estimate@12f41634]" name="beforeMethod" is-config="true" duration-ms="14" started-at="2020-07-14T02:11:14 IST" finished-at="2020-07-14T02:11:14 IST">
           <reporter-output>
           </reporter-output>
         </test-method> <!-- beforeMethod -->
-        <test-method status="PASS" signature="viberBot(java.io.File)[pri:0, instance:tests.rest.Amio_Scenario_2@543c6f6d]" name="viberBot" duration-ms="11202" started-at="2020-07-07T13:48:02 IST" data-provider="fetchData" finished-at="2020-07-07T13:48:13 IST">
-          <params>
-            <param index="0">
-              <value>
-                <![CDATA[.\data\PictureMessage.JSON]]>
-              </value>
-            </param>
-          </params>
+        <test-method status="PASS" signature="createEstimate()[pri:0, instance:tests.rest.FreshBooks_Estimate@12f41634]" name="createEstimate" duration-ms="5102" started-at="2020-07-14T02:11:14 IST" finished-at="2020-07-14T02:11:20 IST">
           <reporter-output>
           </reporter-output>
-        </test-method> <!-- viberBot -->
-        <test-method status="PASS" signature="afterMethod()[pri:0, instance:tests.rest.Amio_Scenario_2@543c6f6d]" name="afterMethod" is-config="true" duration-ms="1" started-at="2020-07-07T13:48:13 IST" finished-at="2020-07-07T13:48:13 IST">
+        </test-method> <!-- createEstimate -->
+        <test-method status="PASS" signature="afterMethod()[pri:0, instance:tests.rest.FreshBooks_Estimate@12f41634]" name="afterMethod" is-config="true" duration-ms="1" started-at="2020-07-14T02:11:20 IST" finished-at="2020-07-14T02:11:20 IST">
           <reporter-output>
           </reporter-output>
         </test-method> <!-- afterMethod -->
-        <test-method status="PASS" signature="afterSuite()[pri:0, instance:tests.rest.Amio_Scenario_2@543c6f6d]" name="afterSuite" is-config="true" duration-ms="1352" started-at="2020-07-07T13:48:13 IST" finished-at="2020-07-07T13:48:14 IST">
+        <test-method status="PASS" signature="afterSuite()[pri:0, instance:tests.rest.FreshBooks_Estimate@12f41634]" name="afterSuite" is-config="true" duration-ms="781" started-at="2020-07-14T02:11:20 IST" finished-at="2020-07-14T02:11:20 IST">
           <reporter-output>
           </reporter-output>
         </test-method> <!-- afterSuite -->
-      </class> <!-- tests.rest.Amio_Scenario_2 -->
+      </class> <!-- tests.rest.FreshBooks_Estimate -->
     </test> <!-- Default test -->
   </suite> <!-- Default suite -->
 </testng-results>

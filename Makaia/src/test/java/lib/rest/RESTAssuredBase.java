@@ -4,6 +4,8 @@ import java.io.File;
 import java.util.List;
 import java.util.Map;
 
+import org.openqa.selenium.devtools.applicationcache.ApplicationCache;
+
 import io.restassured.RestAssured;
 import io.restassured.http.ContentType;
 import io.restassured.path.json.JsonPath;
@@ -18,15 +20,19 @@ public class RESTAssuredBase extends PreAndTest{
 
 		return RestAssured.given().log().all().contentType(getContentType());
 	}
+	public static  RequestSpecification setLogs_get() {
+
+		return RestAssured.given().log().all();
+	}
 
 	public static Response get(String URL) {
-		return setLogs()
+		return setLogs_get()
 				.when().get(URL);
 	}
 
 
 	public static Response get() {
-		return setLogs()
+		return setLogs_get()
 				.get();
 	}
 
@@ -148,6 +154,10 @@ public class RESTAssuredBase extends PreAndTest{
 			String jsonObject, String URL) {
 
 		return RestAssured.given().headers(headers).body(jsonObject).when().put(URL);
+	}
+	public static Response putWithBodyParam(String jsonObject, String URL) {
+
+		return RestAssured.given().contentType(getContentType()).request().body(jsonObject).when().put(URL);
 	}
 	
 	public static ValidatableResponse enableResponseLog(Response response) {
