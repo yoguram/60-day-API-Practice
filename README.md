@@ -53,3 +53,11 @@ Manual Steps:
 Automation Steps:
 - find the weather forecast of major city in india which are having Rain and Haze.
 - Find the Rain volume in Mumbai for last 3 days.
+
+https://paystack.com/docs/api/
+
+Scenario1:
+a)Create a new Payment Page b)Get all the Payment pages and verify the newly created page c)Get the newly created page and verify the details
+
+Scenario2:
+a)Create a new Subscription b)Enable the subscription c)Verify the subscription status using Fetch new subscription d)Disable the Subscription and verify the status
