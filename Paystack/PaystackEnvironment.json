@@ -1,0 +1,39 @@
+{
+	"id": "4eac6c02-321d-4685-b56d-6d6964274729",
+	"name": "Paystack",
+	"values": [
+		{
+			"key": "paymentPageId",
+			"value": 277721,
+			"enabled": true
+		},
+		{
+			"key": "CustomerCode",
+			"value": "CUS_zzg5gl2pnouo11i",
+			"enabled": true
+		},
+		{
+			"key": "planCode",
+			"value": "PLN_qj4d2skly64jv8j",
+			"enabled": true
+		},
+		{
+			"key": "Auth",
+			"value": "AUTH_yc2f7wlnb9",
+			"enabled": true
+		},
+		{
+			"key": "SubCode",
+			"value": "SUB_9egcpucywhm1fn8",
+			"enabled": true
+		},
+		{
+			"key": "token",
+			"value": "hd0iw4lvbvompe8",
+			"enabled": true
+		}
+	],
+	"_postman_variable_scope": "environment",
+	"_postman_exported_at": "2020-07-24T09:10:51.204Z",
+	"_postman_exported_using": "Postman/7.28.0"
+}

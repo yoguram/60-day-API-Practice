@@ -1,0 +1,374 @@
+{
+	"info": {
+		"_postman_id": "f4c03c22-eee1-42f5-b1ee-8f495a41c99e",
+		"name": "Paystack newman",
+		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json"
+	},
+	"item": [
+		{
+			"name": "Create Payment Page",
+			"event": [
+				{
+					"listen": "test",
+					"script": {
+						"id": "8136ee2d-04d2-4285-972c-ae790687229f",
+						"exec": [
+							"var resp =  pm.response.json();\r",
+							"pm.environment.set(\"paymentPageId\", resp.data.id);"
+						],
+						"type": "text/javascript"
+					}
+				}
+			],
+			"request": {
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n    \"name\": \"Testing\",\r\n    \"Amount\":34000\r\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "https://api.paystack.co/page",
+					"protocol": "https",
+					"host": [
+						"api",
+						"paystack",
+						"co"
+					],
+					"path": [
+						"page"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Verify the Payment page",
+			"event": [
+				{
+					"listen": "test",
+					"script": {
+						"id": "e6009b99-c91d-42c4-a324-85c3453ca358",
+						"exec": [
+							"var resp = pm.response.json();\r",
+							"var id = pm.environment.get(\"paymentPageId\");\r",
+							"for(var i=0;i<resp.data.length;i++)\r",
+							"{\r",
+							"if(resp.data[i].id==id)\r",
+							"{\r",
+							"    console.log(\"Payment page is in the list\");\r",
+							"}\r",
+							"}\r",
+							""
+						],
+						"type": "text/javascript"
+					}
+				}
+			],
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "https://api.paystack.co/page",
+					"protocol": "https",
+					"host": [
+						"api",
+						"paystack",
+						"co"
+					],
+					"path": [
+						"page"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Get Payment page",
+			"event": [
+				{
+					"listen": "test",
+					"script": {
+						"id": "4aee4140-162c-439e-9ea4-c3b1ce4fec99",
+						"exec": [
+							"var resp = pm.response.json();\r",
+							"\r",
+							"if(pm.environment.get(\"paymentPageId\")==resp.data.id)\r",
+							"{\r",
+							"    console.log(\"Verified the id\");\r",
+							"}"
+						],
+						"type": "text/javascript"
+					}
+				}
+			],
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "https://api.paystack.co/page/{{paymentPageId}}",
+					"protocol": "https",
+					"host": [
+						"api",
+						"paystack",
+						"co"
+					],
+					"path": [
+						"page",
+						"{{paymentPageId}}"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Get Transaction",
+			"event": [
+				{
+					"listen": "test",
+					"script": {
+						"id": "7b7f1d21-1472-4801-99fd-be7937d7f84d",
+						"exec": [
+							"var resp = pm.response.json();\r",
+							"pm.environment.set(\"Auth\", resp.data.authorization.authorization_code);"
+						],
+						"type": "text/javascript"
+					}
+				}
+			],
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "https://api.paystack.co/transaction/verify/bqe9zl4ytp",
+					"protocol": "https",
+					"host": [
+						"api",
+						"paystack",
+						"co"
+					],
+					"path": [
+						"transaction",
+						"verify",
+						"bqe9zl4ytp"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Create Subscription",
+			"event": [
+				{
+					"listen": "test",
+					"script": {
+						"id": "96ed3a36-a2d7-44d7-a5a5-11c845941d9d",
+						"exec": [
+							"var resp = pm.response.json();\r",
+							"pm.environment.set(\"SubCode\", resp.data.subscription_code);\r",
+							"pm.environment.set(\"token\", resp.data.email_token);\r",
+							""
+						],
+						"type": "text/javascript"
+					}
+				}
+			],
+			"request": {
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{ \r\n    \"customer\": \"CUS_zzg5gl2pnouo11i\", \r\n    \"plan\": \"PLN_qj4d2skly64jv8j\",\r\n    \"authorization_code\": \"{{Auth}}\"\r\n    }",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "https://api.paystack.co/subscription",
+					"protocol": "https",
+					"host": [
+						"api",
+						"paystack",
+						"co"
+					],
+					"path": [
+						"subscription"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "List Subscription",
+			"event": [
+				{
+					"listen": "test",
+					"script": {
+						"id": "0a70fc2a-13fe-4ed5-b857-794ec5f3e499",
+						"exec": [
+							"var resp = pm.response.json();\r",
+							"for(var i=0;i<resp.data.length;i++)\r",
+							"{\r",
+							"    if(pm.environment.get(\"SubCode\")==resp.data[i].subscription_code)\r",
+							"\r",
+							"    {\r",
+							"        console.log(\"Subscription created Successfully\");\r",
+							"    }\r",
+							"}"
+						],
+						"type": "text/javascript"
+					}
+				}
+			],
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "https://api.paystack.co/subscription",
+					"protocol": "https",
+					"host": [
+						"api",
+						"paystack",
+						"co"
+					],
+					"path": [
+						"subscription"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Enable subscription",
+			"event": [
+				{
+					"listen": "test",
+					"script": {
+						"id": "55c65cb0-e4da-4aa1-a140-e2688c8afe16",
+						"exec": [
+							"var resp = pm.response.json();\r",
+							"console.log(resp.message);"
+						],
+						"type": "text/javascript"
+					}
+				}
+			],
+			"request": {
+				"method": "POST",
+				"header": [
+					{
+						"key": "Content-Type",
+						"value": "application/json",
+						"type": "text"
+					}
+				],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n    \"code\": \"{{SubCode}}\",\r\n    \"token\": \"{{token}}\"\r\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "https://api.paystack.co/subscription/enable",
+					"protocol": "https",
+					"host": [
+						"api",
+						"paystack",
+						"co"
+					],
+					"path": [
+						"subscription",
+						"enable"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Disable Subscription",
+			"event": [
+				{
+					"listen": "test",
+					"script": {
+						"id": "23200ba4-e7e2-4720-829a-86d36b5d0f5b",
+						"exec": [
+							"var resp = pm.response.json();\r",
+							"console.log(resp.message);"
+						],
+						"type": "text/javascript"
+					}
+				}
+			],
+			"request": {
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n    \"code\": \"{{SubCode}}\",\r\n    \"token\": \"{{token}}\"\r\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "https://api.paystack.co/subscription/disable",
+					"protocol": "https",
+					"host": [
+						"api",
+						"paystack",
+						"co"
+					],
+					"path": [
+						"subscription",
+						"disable"
+					]
+				}
+			},
+			"response": []
+		}
+	],
+	"auth": {
+		"type": "bearer",
+		"bearer": [
+			{
+				"key": "token",
+				"value": "sk_test_f16cad96f4c390902c7c5478fb91c4230e01a9e2",
+				"type": "string"
+			}
+		]
+	},
+	"event": [
+		{
+			"listen": "prerequest",
+			"script": {
+				"id": "fc4b6862-b82d-4c26-b534-6c673a41d6db",
+				"type": "text/javascript",
+				"exec": [
+					""
+				]
+			}
+		},
+		{
+			"listen": "test",
+			"script": {
+				"id": "43b49341-5d3b-4d5b-b5e0-194cfb9a3d80",
+				"type": "text/javascript",
+				"exec": [
+					""
+				]
+			}
+		}
+	],
+	"protocolProfileBehavior": {}
+}
