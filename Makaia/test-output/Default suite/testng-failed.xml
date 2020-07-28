@@ -3,17 +3,17 @@
 <suite guice-stage="DEVELOPMENT" name="Failed suite [Default suite]">
   <test thread-count="5" name="Default test(failed)">
     <classes>
-      <class name="tests.rest.Amio_Scenario_2">
+      <class name="tests.rest.Kloudless_Contacts_Opportunity">
         <methods>
           <include name="beforeClass"/>
-          <include name="viberBot" invocation-numbers="0"/>
           <include name="beforeSuite"/>
           <include name="afterSuite"/>
+          <include name="setValues"/>
           <include name="beforeMethod"/>
           <include name="afterMethod"/>
-          <include name="setValues"/>
+          <include name="createOpportunityAndContacts"/>
         </methods>
-      </class> <!-- tests.rest.Amio_Scenario_2 -->
+      </class> <!-- tests.rest.Kloudless_Contacts_Opportunity -->
     </classes>
   </test> <!-- Default test(failed) -->
 </suite> <!-- Failed suite [Default suite] -->

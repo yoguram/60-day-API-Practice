@@ -2,40 +2,40 @@
 <testng-results skipped="0" failed="0" ignored="0" total="1" passed="1">
   <reporter-output>
   </reporter-output>
-  <suite name="Default suite" duration-ms="5154" started-at="2020-07-14T02:11:14 IST" finished-at="2020-07-14T02:11:20 IST">
+  <suite name="Default suite" duration-ms="14219" started-at="2020-07-28T18:27:45 IST" finished-at="2020-07-28T18:27:59 IST">
     <groups>
     </groups>
-    <test name="Default test" duration-ms="5154" started-at="2020-07-14T02:11:14 IST" finished-at="2020-07-14T02:11:20 IST">
-      <class name="tests.rest.FreshBooks_Estimate">
-        <test-method status="PASS" signature="beforeSuite()[pri:0, instance:tests.rest.FreshBooks_Estimate@12f41634]" name="beforeSuite" is-config="true" duration-ms="1377" started-at="2020-07-14T02:11:13 IST" finished-at="2020-07-14T02:11:14 IST">
+    <test name="Default test" duration-ms="14219" started-at="2020-07-28T18:27:45 IST" finished-at="2020-07-28T18:27:59 IST">
+      <class name="tests.rest.Kloudless_Contacts_Opportunity">
+        <test-method status="PASS" signature="beforeSuite()[pri:0, instance:tests.rest.Kloudless_Contacts_Opportunity@7a3d45bd]" name="beforeSuite" is-config="true" duration-ms="1360" started-at="2020-07-28T18:27:44 IST" finished-at="2020-07-28T18:27:45 IST">
           <reporter-output>
           </reporter-output>
         </test-method> <!-- beforeSuite -->
-        <test-method status="PASS" signature="setValues()[pri:0, instance:tests.rest.FreshBooks_Estimate@12f41634]" name="setValues" is-config="true" duration-ms="0" started-at="2020-07-14T02:11:14 IST" finished-at="2020-07-14T02:11:14 IST">
+        <test-method status="PASS" signature="setValues()[pri:0, instance:tests.rest.Kloudless_Contacts_Opportunity@7a3d45bd]" name="setValues" is-config="true" duration-ms="1" started-at="2020-07-28T18:27:45 IST" finished-at="2020-07-28T18:27:45 IST">
           <reporter-output>
           </reporter-output>
         </test-method> <!-- setValues -->
-        <test-method status="PASS" signature="beforeClass()[pri:0, instance:tests.rest.FreshBooks_Estimate@12f41634]" name="beforeClass" is-config="true" duration-ms="2" started-at="2020-07-14T02:11:14 IST" finished-at="2020-07-14T02:11:14 IST">
+        <test-method status="PASS" signature="beforeClass()[pri:0, instance:tests.rest.Kloudless_Contacts_Opportunity@7a3d45bd]" name="beforeClass" is-config="true" duration-ms="1" started-at="2020-07-28T18:27:45 IST" finished-at="2020-07-28T18:27:45 IST">
           <reporter-output>
           </reporter-output>
         </test-method> <!-- beforeClass -->
-        <test-method status="PASS" signature="beforeMethod()[pri:0, instance:tests.rest.FreshBooks_Estimate@12f41634]" name="beforeMethod" is-config="true" duration-ms="14" started-at="2020-07-14T02:11:14 IST" finished-at="2020-07-14T02:11:14 IST">
+        <test-method status="PASS" signature="beforeMethod()[pri:0, instance:tests.rest.Kloudless_Contacts_Opportunity@7a3d45bd]" name="beforeMethod" is-config="true" duration-ms="7" started-at="2020-07-28T18:27:45 IST" finished-at="2020-07-28T18:27:45 IST">
           <reporter-output>
           </reporter-output>
         </test-method> <!-- beforeMethod -->
-        <test-method status="PASS" signature="createEstimate()[pri:0, instance:tests.rest.FreshBooks_Estimate@12f41634]" name="createEstimate" duration-ms="5102" started-at="2020-07-14T02:11:14 IST" finished-at="2020-07-14T02:11:20 IST">
+        <test-method status="PASS" signature="createOpportunityAndContacts()[pri:0, instance:tests.rest.Kloudless_Contacts_Opportunity@7a3d45bd]" name="createOpportunityAndContacts" duration-ms="14172" started-at="2020-07-28T18:27:45 IST" finished-at="2020-07-28T18:27:59 IST">
           <reporter-output>
           </reporter-output>
-        </test-method> <!-- createEstimate -->
-        <test-method status="PASS" signature="afterMethod()[pri:0, instance:tests.rest.FreshBooks_Estimate@12f41634]" name="afterMethod" is-config="true" duration-ms="1" started-at="2020-07-14T02:11:20 IST" finished-at="2020-07-14T02:11:20 IST">
+        </test-method> <!-- createOpportunityAndContacts -->
+        <test-method status="PASS" signature="afterMethod()[pri:0, instance:tests.rest.Kloudless_Contacts_Opportunity@7a3d45bd]" name="afterMethod" is-config="true" duration-ms="0" started-at="2020-07-28T18:27:59 IST" finished-at="2020-07-28T18:27:59 IST">
           <reporter-output>
           </reporter-output>
         </test-method> <!-- afterMethod -->
-        <test-method status="PASS" signature="afterSuite()[pri:0, instance:tests.rest.FreshBooks_Estimate@12f41634]" name="afterSuite" is-config="true" duration-ms="781" started-at="2020-07-14T02:11:20 IST" finished-at="2020-07-14T02:11:20 IST">
+        <test-method status="PASS" signature="afterSuite()[pri:0, instance:tests.rest.Kloudless_Contacts_Opportunity@7a3d45bd]" name="afterSuite" is-config="true" duration-ms="848" started-at="2020-07-28T18:28:00 IST" finished-at="2020-07-28T18:28:00 IST">
           <reporter-output>
           </reporter-output>
         </test-method> <!-- afterSuite -->
-      </class> <!-- tests.rest.FreshBooks_Estimate -->
+      </class> <!-- tests.rest.Kloudless_Contacts_Opportunity -->
     </test> <!-- Default test -->
   </suite> <!-- Default suite -->
 </testng-results>
