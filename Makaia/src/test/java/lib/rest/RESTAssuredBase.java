@@ -43,6 +43,23 @@ public class RESTAssuredBase extends PreAndTest{
 				.headers(headers)
 				.get(URL);
 	}
+	
+	public static Response getWithParam(Map<String, String> params, String URL) {
+
+		return setLogs()
+				.when()
+				.queryParams(params)
+				.get(URL);
+	}
+	
+	public static Response getWithParam(String param1, int param2, Map<String,String>param, String URL) {
+
+		return setLogs()
+				.when()
+				.queryParam(param1,param2)
+				.queryParams(param)
+				.get(URL);
+	}
 	public static Response patchWithJsonAsBody(String jsonObject, String URL) {
 
 		return setLogs()

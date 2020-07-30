@@ -18,7 +18,7 @@ public class Kloudless_SalesForce extends RESTAssuredBase {
 	public void setValues() {
 		testCaseName = "Scenario 1";
 		testDescription = "Create the app,Update the logo and verify the app with new logo";
-		nodes = "Okta - Scenario1";
+		nodes = "Kloudless - Scenario1";
 		authors = "Ram";
 		category = "API";
 		//dataFileName = "CreateClient";
